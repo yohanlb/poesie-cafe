@@ -10,7 +10,7 @@ export default function Home() {
         <div className="mb-4">
           <Image
             src="/images/poesie-logo.svg"
-            alt="Poésie - Café, Thé et Ateliers à Paris"
+            alt="Poésie"
             width={300}
             height={120}
             priority
