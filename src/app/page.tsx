@@ -6,17 +6,15 @@ export default function Home() {
       {/* Future Navbar */}
       <nav className="h-8 w-full"></nav>
       {/* Logo and subtitle group */}
-      <div className="flex-grow flex flex-col items-center justify-center">
-        <div className="mb-4">
-          <Image
-            src="/images/poesie-logo.svg"
-            alt="Poésie"
-            width={300}
-            height={120}
-            priority
-            className="w-auto h-auto max-w-full"
-          />
-        </div>
+      <div className="flex-grow flex flex-col items-center justify-center gap-3">
+        <Image
+          src="/images/poesie-logo.svg"
+          alt="Poésie"
+          width={300}
+          height={120}
+          priority
+          className="w-auto h-auto max-w-full"
+        />
         <div className="flex flex-col items-center text-md leading-[17px] font-[300]">
           <div>CAFÉ / THÉ / ATELIERS</div>
           <div>®2025 PARIS</div>
