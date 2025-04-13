@@ -37,7 +37,9 @@
 body {
   background-color: var(--background-blue);
   color: var(--foreground);
-  min-height: 100vh;
+  min-height: 100dvh;
+  height: 100dvh;
+  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
