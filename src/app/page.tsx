@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Footer from "@components/Footer";
 
 export default function Home() {
   return (
@@ -26,7 +27,7 @@ export default function Home() {
         <p>10 PASSAGE THIÉRÉ,</p>
         <p>75011, PARIS</p>
       </div>
-      <footer className="h-11"></footer>
+      <Footer />
     </main>
   );
 }
