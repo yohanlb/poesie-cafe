@@ -4,9 +4,9 @@ export default function Home() {
   return (
     <main className={`min-h-screen justify-between flex flex-col`}>
       {/* Future Navbar */}
-      <nav className="h-8 w-full"></nav>
+      <nav className="h-18 w-full"></nav>
       {/* Logo and subtitle group */}
-      <div className="flex-grow flex flex-col items-center justify-center gap-3">
+      <div className="flex-grow flex flex-col items-center justify-center gap-5">
         <Image
           src="/images/poesie-logo.svg"
           alt="Poésie"
@@ -15,18 +15,18 @@ export default function Home() {
           priority
           className="w-auto h-auto max-w-full"
         />
-        <div className="flex flex-col items-center text-md leading-[17px] font-[300]">
+        <div className="flex flex-col items-center text-md leading-[17px] font-[400]">
           <div>CAFÉ / THÉ / ATELIERS</div>
           <div>®2025 PARIS</div>
           <div>OPENING SOON</div>
         </div>
       </div>
       {/* Address section */}
-      <div className="p-5 mb-5 text-md text-center leading-[17px] font-[300]">
+      <div className="text-md text-center leading-[17px] font-[400]">
         <p>10 PASSAGE THIÉRÉ,</p>
         <p>75011, PARIS</p>
       </div>
-      <footer className="h-8"></footer>
+      <footer className="h-11"></footer>
     </main>
   );
 }
