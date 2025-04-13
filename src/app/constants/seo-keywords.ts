@@ -1,4 +1,15 @@
 export const SEO_KEYWORDS: string[] = [
+  // Brand specific keywords
+  "poésie coffee",
+  "poésie coffee paris",
+  "poésie coffee bastille",
+  "poésie coffee 11ème",
+  "poésie coffee 11th",
+  "poésie coffee workshop",
+  "poésie coffee atelier",
+  "poésie coffee café",
+  "poésie coffee tea",
+  "poésie coffee thé",
   // French keywords
   "café paris",
   "thé paris",
