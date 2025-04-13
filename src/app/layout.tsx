@@ -12,7 +12,7 @@ const ibmPlexSans = IBM_Plex_Sans({
 const SITE_TITLE = "Poésie Coffee";
 const SITE_DESCRIPTION = "Café & Ateliers à Paris";
 const SHORT_DESCRIPTION =
-  "Poésie est un Coffee Shop et un Lieu de Rencontres Artistiques. Expositions, Ateliers Créatifs & Upcycling";
+  "Poésie est un Coffee Shop et un Lieu de Rencontres Artistiques, Expositions, Ateliers Créatifs & Upcycling";
 
 export const metadata: Metadata = {
   title: {
