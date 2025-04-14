@@ -53,9 +53,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "", // TODO: Add Google Console verification code
-  },
 };
 
 export default function RootLayout({
@@ -68,7 +65,7 @@ export default function RootLayout({
       <body className={ibmPlexSans.className}>
         {children}
         <Script
-          src="https://cloud.umami.is/script.js"
+          src="/analytics.js"
           data-website-id="cf950c5d-0a94-43e6-8cec-b78ea9d038fa"
           strategy="afterInteractive"
         />
