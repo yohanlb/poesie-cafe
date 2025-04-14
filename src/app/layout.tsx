@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
+import Script from "next/script";
 import { SEO_KEYWORDS } from "./constants/seo-keywords";
 import "./globals.css";
 
@@ -64,7 +65,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className={ibmPlexSans.className}>{children}</body>
+      <body className={ibmPlexSans.className}>
+        {children}
+        <Script
+          src="https://cloud.umami.is/script.js"
+          data-website-id="cf950c5d-0a94-43e6-8cec-b78ea9d038fa"
+          strategy="afterInteractive"
+        />
+      </body>
     </html>
   );
 }
