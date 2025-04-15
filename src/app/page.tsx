@@ -3,7 +3,7 @@ import Footer from "@components/Footer";
 
 export default function Home() {
   return (
-    <main className={`min-h-screen justify-between flex flex-col`}>
+    <main className="min-h-svh justify-between flex flex-col">
       {/* Future Navbar */}
       <nav className="h-18 w-full"></nav>
       {/* Logo and subtitle group */}
