@@ -23,7 +23,7 @@ export default function Home() {
         </div>
       </div>
       {/* Address section */}
-      <div className="text-md md:text-xl lg:text-2xl text-center leading-[17px] md:leading-[24px] font-[400] md:mb-2">
+      <div className="text-md md:text-xl lg:text-2xl text-center leading-5 md:leading-8 font-[400] md:mb-2">
         <p>10 PASSAGE THIÉRÉ,</p>
         <p>75011, PARIS</p>
       </div>
