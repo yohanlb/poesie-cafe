@@ -25,6 +25,21 @@ export const metadata: Metadata = {
   authors: [{ name: SITE_TITLE }],
   creator: SITE_TITLE,
   publisher: SITE_TITLE,
+  icons: {
+    icon: [
+      { url: "/Favicon_16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/Favicon_32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/Optional_192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/Optional_512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      {
+        url: "/Apple_touch_icon_180x180.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
   formatDetection: {
     email: false,
     address: false,
