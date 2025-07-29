@@ -42,10 +42,10 @@ export default function Evenements() {
                   {sortedDates.map((date) => (
                     <div key={date} className="space-y-4">
                       {/* Date Header */}
-                      <div className="text-left mb-6">
+                      <div className="text-left mb-3">
                         <Badge
                           variant="secondary"
-                          className="text-lg px-4 py-2 bg-card/60 border-border/40 text-foreground/90"
+                          className="text-lg px-4 py-2 bg-card border-border text-foreground"
                         >
                           {formatDate(date)}
                         </Badge>
