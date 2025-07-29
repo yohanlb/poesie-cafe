@@ -1,18 +1,30 @@
 import { Event } from "../data/events";
 
 /**
- * Formats a date string (DD/MM/YYYY) to a French locale string
+ * Formats a date string (DD/MM/YYYY) to a French locale string with proper capitalization
  */
 export const formatDate = (dateString: string): string => {
   try {
     const [day, month, year] = dateString.split("/");
     const date = new Date(`${year}-${month}-${day}`);
-    return date.toLocaleDateString("fr-FR", {
+    const formattedDate = date.toLocaleDateString("fr-FR", {
       weekday: "long",
       day: "numeric",
       month: "long",
       year: "numeric",
     });
+
+    // Capitalize the first letter of day and month
+    const words = formattedDate.split(" ");
+    const capitalizedWords = words.map((word) => {
+      // Check if the word is a day or month (not a number or year)
+      if (isNaN(Number(word)) && word.length > 2) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      }
+      return word;
+    });
+
+    return capitalizedWords.join(" ");
   } catch {
     return dateString; // Fallback to original string if parsing fails
   }

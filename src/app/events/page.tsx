@@ -8,7 +8,6 @@ import {
 } from "../../lib/event-utils";
 
 export default function Evenements() {
-  // Group events by date and sort chronologically
   const eventsByDate = groupEventsByDate(events);
   const sortedDates = sortDatesChronologically(Object.keys(eventsByDate));
 
@@ -17,7 +16,6 @@ export default function Evenements() {
       {/* Future Navbar */}
       <nav className="h-18 w-full"></nav>
 
-      {/* Header */}
       <div className="flex-grow flex flex-col items-center justify-center mx-4 sm:mx-8">
         {/* Page Title */}
         <div className="text-center mb-8">
@@ -26,7 +24,6 @@ export default function Evenements() {
           </h1>
         </div>
 
-        {/* Separator */}
         <div className="h-8 md:h-10"></div>
 
         {/* Reservation Info */}
@@ -39,19 +36,17 @@ export default function Evenements() {
           </div>
         </div>
 
-        {/* Separator */}
         <div className="h-8 md:h-10"></div>
 
-        {/* Events Content */}
+        {/* Events Timeline */}
         <div className="w-full max-w-2xl space-y-12">
-          {/* Timeline of Events */}
-          <section className="text-center">
+          <section>
             {sortedDates.length > 0 ? (
               <div className="space-y-8">
                 {sortedDates.map((date) => (
                   <div key={date} className="space-y-4">
                     {/* Date Header */}
-                    <div className="text-center mb-6">
+                    <div className="text-left mb-6">
                       <h2 className="text-xl md:text-2xl font-semibold text-gray-800 bg-gray-100 px-4 py-2 rounded-lg inline-block">
                         {formatDate(date)}
                       </h2>
