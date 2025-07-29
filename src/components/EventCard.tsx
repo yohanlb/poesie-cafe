@@ -77,13 +77,14 @@ export default function EventCard({ event }: EventCardProps) {
         {event.instructor && (
           <div className="w-full flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-3 border-t border-border/40">
             <div className="flex items-center gap-2">
-              <div
-                className="w-8 h-8 bg-muted rounded-full flex items-center justify-center"
+              <Badge
+                variant="secondary"
+                className="w-8 h-8 bg-card-foreground/10 rounded-full flex items-center justify-center p-0 border-0"
                 aria-hidden="true"
               >
-                <Users className="w-4 h-4 text-muted-foreground" />
-              </div>
-              <span className="text-base font-medium text-foreground/90">
+                <Users className="w-4 h-4 text-white" />
+              </Badge>
+              <span className="text-base font-medium text-white">
                 {event.instructor}
               </span>
             </div>
