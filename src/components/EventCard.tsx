@@ -35,28 +35,28 @@ export default function EventCard({ event }: EventCardProps) {
   };
 
   return (
-    <Card className="bg-slate-800 border-slate-700">
+    <Card className="bg-card/60 border-border/40 backdrop-blur-sm hover:bg-card/70 transition-colors">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="text-2xl">
               {getEventTypeEmoji(event.eventType)}
             </span>
-            <CardTitle className="text-white text-2xl font-bold">
+            <CardTitle className="text-card-foreground text-2xl font-bold">
               {event.name}
             </CardTitle>
           </div>
         </div>
-        <CardDescription className="text-white/70">
-          <div className="flex flex-wrap gap-2 text-sm text-white/80">
-            <div className="flex items-center gap-1">
+        <CardDescription className="text-muted-foreground">
+          <div className="flex flex-wrap gap-2 text-sm">
+            <div className="flex items-center gap-1 text-foreground/80">
               <Clock className="w-4 h-4" />
               <span>{event.time}</span>
             </div>
             {event.price && (
               <Badge
                 variant="outline"
-                className="bg-green-400/20 text-green-200 hover:bg-green-400/30 border-green-300/30"
+                className="bg-primary/20 text-primary-foreground border-primary/30 hover:bg-primary/30"
               >
                 {event.price}
               </Badge>
@@ -67,7 +67,7 @@ export default function EventCard({ event }: EventCardProps) {
 
       {event.description && (
         <CardContent>
-          <p className="text-white/90 text-sm leading-relaxed text-left">
+          <p className="text-foreground/90 text-sm leading-relaxed text-left">
             {event.description}
           </p>
         </CardContent>
@@ -75,30 +75,30 @@ export default function EventCard({ event }: EventCardProps) {
 
       <CardFooter className="w-full">
         {event.instructor && (
-          <div className="w-full flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-3 border-t border-white/10">
+          <div className="w-full flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-3 border-t border-border/40">
             <div className="flex items-center gap-2">
               <div
-                className="w-6 h-6 bg-white/10 rounded-full flex items-center justify-center"
+                className="w-8 h-8 bg-muted rounded-full flex items-center justify-center"
                 aria-hidden="true"
               >
-                <Users className="w-3 h-3 text-white/80" />
+                <Users className="w-4 h-4 text-muted-foreground" />
               </div>
-              <span className="text-sm font-medium text-white/90">
+              <span className="text-base font-medium text-foreground/90">
                 {event.instructor}
               </span>
             </div>
             {event.instagram && (
               <a
-                href={`https://insctagram.com/${cleanInstagramHandle(
+                href={`https://instagram.com/${cleanInstagramHandle(
                   event.instagram
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-pink-300 hover:text-pink-200 transition-colors bg-pink-400/10 px-2.5 py-1 rounded-full hover:bg-pink-400/20"
+                className="flex items-center gap-1.5 text-accent-foreground hover:text-accent-foreground/80 transition-colors bg-accent/10 px-2.5 py-1 rounded-full hover:bg-accent/20"
                 aria-label={`Suivre ${event.instructor} sur Instagram`}
               >
-                <Instagram className="w-3.5 h-3.5" aria-hidden="true" />
-                <span className="text-sm font-medium">{event.instagram}</span>
+                <Instagram className="w-4 h-4" aria-hidden="true" />
+                <span className="text-base font-medium">{event.instagram}</span>
               </a>
             )}
           </div>

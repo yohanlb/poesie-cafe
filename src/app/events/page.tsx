@@ -6,37 +6,41 @@ import {
   groupEventsByDate,
   sortDatesChronologically,
 } from "../../lib/event-utils";
+import { Card, CardContent } from "../../components/ui/card";
+import { Badge } from "../../components/ui/badge";
+import { Smartphone } from "lucide-react";
 
 export default function Evenements() {
   const eventsByDate = groupEventsByDate(events);
   const sortedDates = sortDatesChronologically(Object.keys(eventsByDate));
 
   return (
-    <main className="min-h-svh justify-between flex flex-col">
+    <main className="min-h-svh justify-between flex flex-col bg-background">
       {/* Future Navbar */}
       <nav className="h-18 w-full"></nav>
 
-      <div className="flex-grow flex flex-col items-center justify-center mx-4 sm:mx-8">
+      <div className="flex-grow flex flex-col items-center justify-center mx-4 sm:mx-8 py-8">
         {/* Page Title */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-4">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-light text-foreground/95 tracking-wide">
             PROCHAINS ATELIERS / ÉVÉNEMENTS
           </h1>
         </div>
 
-        <div className="h-8 md:h-10"></div>
+        <div className="h-6 md:h-8"></div>
 
         {/* Reservation Info */}
-        <div className="text-center mb-8">
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 max-w-2xl mx-auto">
-            <p className="text-blue-800 font-medium">
-              📱 Pour réserver un atelier, contactez directement
-              l&apos;animateur sur Instagram
+        <div className="w-full max-w-2xl">
+          <div className="flex items-center gap-1.5 text-foreground/80">
+            <Smartphone className="w-4 h-4" />
+            <p className="text-md font-normal">
+              Pour réserver un atelier, contactez directement l&apos;animateur
+              sur Instagram
             </p>
           </div>
         </div>
 
-        <div className="h-8 md:h-10"></div>
+        <div className="h-6 md:h-8"></div>
 
         {/* Events Timeline */}
         <div className="w-full max-w-2xl space-y-12">
@@ -47,9 +51,12 @@ export default function Evenements() {
                   <div key={date} className="space-y-4">
                     {/* Date Header */}
                     <div className="text-left mb-6">
-                      <h2 className="text-xl md:text-2xl font-semibold text-gray-800 bg-gray-100 px-4 py-2 rounded-lg inline-block">
+                      <Badge
+                        variant="secondary"
+                        className="text-lg px-4 py-2 bg-card/60 border-border/40 text-foreground/90"
+                      >
                         {formatDate(date)}
-                      </h2>
+                      </Badge>
                     </div>
 
                     {/* Events for this date */}
@@ -62,7 +69,13 @@ export default function Evenements() {
                 ))}
               </div>
             ) : (
-              <></>
+              <Card className="bg-card/60 border-border/40">
+                <CardContent className="p-8 text-center">
+                  <p className="text-foreground/70">
+                    Aucun événement programmé pour le moment.
+                  </p>
+                </CardContent>
+              </Card>
             )}
           </section>
         </div>
