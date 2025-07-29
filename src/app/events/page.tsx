@@ -1,8 +1,17 @@
 import Footer from "../../components/Footer";
 import EventCard from "../../components/EventCard";
 import { events } from "../../data/events";
+import {
+  formatDate,
+  groupEventsByDate,
+  sortDatesChronologically,
+} from "../../lib/event-utils";
 
 export default function Evenements() {
+  // Group events by date and sort chronologically
+  const eventsByDate = groupEventsByDate(events);
+  const sortedDates = sortDatesChronologically(Object.keys(eventsByDate));
+
   return (
     <main className="min-h-svh justify-between flex flex-col">
       {/* Future Navbar */}
@@ -35,12 +44,26 @@ export default function Evenements() {
 
         {/* Events Content */}
         <div className="w-full max-w-2xl space-y-12">
-          {/* All Events */}
+          {/* Timeline of Events */}
           <section className="text-center">
-            {events.length > 0 ? (
-              <div className="space-y-6">
-                {events.map((event) => (
-                  <EventCard key={event.id} event={event} />
+            {sortedDates.length > 0 ? (
+              <div className="space-y-8">
+                {sortedDates.map((date) => (
+                  <div key={date} className="space-y-4">
+                    {/* Date Header */}
+                    <div className="text-center mb-6">
+                      <h2 className="text-xl md:text-2xl font-semibold text-gray-800 bg-gray-100 px-4 py-2 rounded-lg inline-block">
+                        {formatDate(date)}
+                      </h2>
+                    </div>
+
+                    {/* Events for this date */}
+                    <div className="space-y-6">
+                      {eventsByDate[date].map((event) => (
+                        <EventCard key={event.id} event={event} />
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
             ) : (

@@ -1,4 +1,4 @@
-import { Clock, Instagram, Users, Calendar } from "lucide-react";
+import { Clock, Instagram, Users } from "lucide-react";
 import { Event } from "../data/events";
 import {
   Card,
@@ -15,21 +15,6 @@ interface EventCardProps {
 }
 
 export default function EventCard({ event }: EventCardProps) {
-  const formatDate = (dateString: string) => {
-    try {
-      const [day, month, year] = dateString.split("/");
-      const date = new Date(`${year}-${month}-${day}`);
-      return date.toLocaleDateString("fr-FR", {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-      });
-    } catch {
-      return dateString; // Fallback to original string if parsing fails
-    }
-  };
-
   const cleanInstagramHandle = (handle: string) => {
     return handle.replace("@", "");
   };
@@ -64,10 +49,6 @@ export default function EventCard({ event }: EventCardProps) {
         </div>
         <CardDescription className="text-white/70">
           <div className="flex flex-wrap gap-2 text-sm text-white/80">
-            <div className="flex items-center gap-1">
-              <Calendar className="w-4 h-4" />
-              <span>{formatDate(event.date)}</span>
-            </div>
             <div className="flex items-center gap-1">
               <Clock className="w-4 h-4" />
               <span>{event.time}</span>
