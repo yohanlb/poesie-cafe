@@ -35,7 +35,7 @@ export default function EventCard({ event }: EventCardProps) {
   };
 
   return (
-    <Card className="bg-card/60 border-border/40 backdrop-blur-sm hover:bg-card/70 transition-colors">
+    <Card className="bg-card border-border backdrop-blur-md hover:bg-card/50 transition-colors">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -94,11 +94,20 @@ export default function EventCard({ event }: EventCardProps) {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-accent-foreground hover:text-accent-foreground/80 transition-colors bg-accent/10 px-2.5 py-1 rounded-full hover:bg-accent/20"
                 aria-label={`Suivre ${event.instructor} sur Instagram`}
               >
-                <Instagram className="w-4 h-4" aria-hidden="true" />
-                <span className="text-base font-medium">{event.instagram}</span>
+                <Badge
+                  variant="secondary"
+                  className="flex items-center gap-1.5 bg-purple-500/50 hover:bg-purple-600/50 text-white border-0 px-3 py-1.5 rounded-full transition-colors"
+                >
+                  <Instagram
+                    className="w-4 h-4 flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span className="text-base font-medium leading-none">
+                    {event.instagram}
+                  </span>
+                </Badge>
               </a>
             )}
           </div>
