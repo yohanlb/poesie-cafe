@@ -19,7 +19,7 @@ export default function Evenements() {
       <div className="w-full max-w-3xl mx-auto px-4 sm:px-8">
         <Navbar />
 
-        <div className="flex-grow flex flex-col items-center justify-center py-8">
+        <div className="flex-grow flex flex-col items-center justify-center py-4">
           {/* Page Title */}
           <div className="text-center mb-8">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground/95 tracking-wide">
