@@ -129,6 +129,7 @@ export const events: Event[] = [
     price: "gratuit",
     eventType: "running-club",
     emoji: "🏃‍♀️🏃",
+    reservationLink: "https://www.instagram.com/poesiecoffee/",
   },
   {
     id: "vernissage-photo",
@@ -149,5 +150,6 @@ export const events: Event[] = [
     price: "gratuit",
     eventType: "running-club",
     emoji: "🏃‍♀️🏃",
+    reservationLink: "https://www.instagram.com/poesiecoffee/",
   },
 ];
