@@ -22,7 +22,7 @@ export default function Evenements() {
         <div className="flex-grow flex flex-col items-center justify-center py-8">
           {/* Page Title */}
           <div className="text-center mb-8">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-light text-foreground/95 tracking-wide">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground/95 tracking-wide">
               Prochains ateliers / événements
             </h1>
             <div className="h-2"></div>

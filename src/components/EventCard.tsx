@@ -42,7 +42,7 @@ export default function EventCard({ event }: EventCardProps) {
             <span className="text-2xl">
               {getEventTypeEmoji(event.eventType)}
             </span>
-            <CardTitle className="text-card-foreground text-2xl font-bold">
+            <CardTitle className="text-card-foreground text-2xl font-semibold">
               {event.name}
             </CardTitle>
           </div>
@@ -84,7 +84,7 @@ export default function EventCard({ event }: EventCardProps) {
               >
                 <Users className="w-4 h-4 text-white" />
               </Badge>
-              <span className="text-base font-medium text-white">
+              <span className="text-base font-normal text-white">
                 {event.instructor}
               </span>
             </div>
@@ -105,7 +105,7 @@ export default function EventCard({ event }: EventCardProps) {
                     className="w-4 h-4 flex-shrink-0"
                     aria-hidden="true"
                   />
-                  <span className="text-base font-medium leading-none">
+                  <span className="text-base font-normal leading-none">
                     {event.instagram}
                   </span>
                 </Badge>
