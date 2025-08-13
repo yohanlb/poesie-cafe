@@ -19,29 +19,12 @@ export default function EventCard({ event }: EventCardProps) {
     return handle.replace("@", "");
   };
 
-  const getEventTypeEmoji = (eventType: Event["eventType"]) => {
-    switch (eventType) {
-      case "workshop":
-        return "🎨";
-      case "running-club":
-        return "🏃‍♂️";
-      case "vernissage":
-        return "🖼️";
-      case "other":
-        return "✨";
-      default:
-        return "📅";
-    }
-  };
-
   return (
     <Card className="bg-white border-gray-200 backdrop-blur-md hover:bg-gray-50 transition-colors">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="text-2xl">
-              {getEventTypeEmoji(event.eventType)}
-            </span>
+            <span className="text-2xl">{event.emoji || "📅"}</span>
             <CardTitle className="text-gray-900 text-2xl font-normal">
               {event.name}
             </CardTitle>
