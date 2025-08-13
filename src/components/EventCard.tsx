@@ -61,8 +61,14 @@ export default function EventCard({ event }: EventCardProps) {
 
       {(event.description || event.reservationLink) && (
         <CardContent>
-          <p className="text-gray-700 text-sm leading-relaxed text-left">
-            {event.description}
+          <div className="text-gray-700 text-sm leading-relaxed text-left">
+            {event.description &&
+              event.description.split("\n").map((line, index, array) => (
+                <span key={index}>
+                  {line}
+                  {index < array.length - 1 && <br />}
+                </span>
+              ))}
             {event.reservationLink && (
               <>
                 {event.description && (
@@ -84,7 +90,7 @@ export default function EventCard({ event }: EventCardProps) {
                 </span>
               </>
             )}
-          </p>
+          </div>
         </CardContent>
       )}
 
