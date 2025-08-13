@@ -22,7 +22,7 @@ export const events: Event[] = [
     instructor: "Katharina",
     instagram: "@atkatharina",
     description:
-      "Un club créatif hebdomadaire pour enfants, ouvert à tous les âges. Pendant que les enfants explorent leur imagination à travers des activités artistiques, les parents peuvent savourer un moment de détente autour d'un café.",
+      "Un club créatif hebdomadaire pour enfants, de 6 à 8 ans.  Pendant que les enfants explorent leur imagination à travers des activités artistiques, les parents peuvent savourer un moment de détente autour d'un café.",
     eventType: "workshop",
     emoji: "🌈",
     reservationLink: "https://www.instagram.com/p/DNFzPxLs0L3/?img_index=1",
@@ -78,7 +78,7 @@ export const events: Event[] = [
     instructor: "Katharina",
     instagram: "@atkatharina",
     description:
-      "Un club créatif hebdomadaire pour enfants, ouvert à tous les âges. Pendant que les enfants explorent leur imagination à travers des activités artistiques, les parents peuvent savourer un moment de détente autour d'un café.",
+      "Un club créatif hebdomadaire pour enfants, 8 à 10 ans.  Pendant que les enfants explorent leur imagination à travers des activités artistiques, les parents peuvent savourer un moment de détente autour d'un café.",
     eventType: "workshop",
     emoji: "🌈",
     reservationLink: "https://www.instagram.com/p/DNFzPxLs0L3/?img_index=1",
@@ -120,7 +120,7 @@ export const events: Event[] = [
     instructor: "Marie",
     instagram: "@calliope_editions",
     description:
-      "Vous sentez votre élan créatif s'essouffler ? La page reste blanche malgré l'envie d'écrire ? Rejoignez notre atelier d'écriture spécialement conçu pour vous redonner l'inspiration. Au programme : Exercices ciblés pour déverrouiller la créativité et relancer vos idées Échanges autour du thème du « vide » créatif Conseils pratiques et pistes concrètes pour nourrir durablement votre écriture Un petit groupe pour favoriser un accompagnement personnalisé et des retours bienveillants. Une boisson chaude ou froide et une gourmandise sucrée sont incluses pour accompagner ce moment suspendu. Tarif : 37 € TTC. ⏱ Durée : 3 heures, de 9h à 12h",
+      "Vous sentez votre élan créatif s'essouffler ? La page reste blanche malgré l'envie d'écrire ? Rejoignez notre atelier d'écriture spécialement conçu pour vous redonner l'inspiration. Au programme :\n\nExercices ciblés pour déverrouiller la créativité et relancer vos idées.\n\nÉchanges autour du thème du « vide » créatif.\n\nConseils pratiques et pistes concrètes pour nourrir durablement votre écriture.\n\nUn petit groupe pour favoriser un accompagnement personnalisé et des retours bienveillants. Une boisson chaude ou froide et une gourmandise sucrée sont incluses pour accompagner ce moment suspendu. Tarif : 37 € TTC. ⏱ Durée : 3 heures, de 9h à 12h",
     eventType: "workshop",
     emoji: "📖",
     reservationLink: "https://www.calliope-editions.fr/actualit%C3%A9s",
@@ -131,6 +131,8 @@ export const events: Event[] = [
     date: "07/09/2025",
     time: "10H-11H",
     price: "gratuit",
+    description:
+      "📍 Départ & arrivée : Poésie coffee, 10 passage Thiéré – Paris 11e\n🛣️ Parcours : 7km organisé par Chloé (Strava Chloé Fouillot)\n\n💌 L'événement est gratuit, mais il faudra réserver sa place en envoyant un message directement sur le compte de Poésie pour une question d'organisation.\nN'hésite pas à indiquer également ton allure de course pour que l'on sache si la création de plusieurs groupes est nécessaire.",
     eventType: "running-club",
     emoji: "🏃‍♀️🏃",
     reservationLink: "https://www.instagram.com/poesiecoffee/",
@@ -152,6 +154,8 @@ export const events: Event[] = [
     date: "21/09/2025",
     time: "10H-11H",
     price: "gratuit",
+    description:
+      "📍 Départ & arrivée : Poésie coffee, 10 passage Thiéré – Paris 11e\n🛣️ Parcours : 7km organisé par Chloé (Strava Chloé Fouillot)\n\n💌 L'événement est gratuit, mais il faudra réserver sa place en envoyant un message directement sur le compte de Poésie pour une question d'organisation.\nN'hésite pas à indiquer également ton allure de course pour que l'on sache si la création de plusieurs groupes est nécessaire.",
     eventType: "running-club",
     emoji: "🏃‍♀️🏃",
     reservationLink: "https://www.instagram.com/poesiecoffee/",
