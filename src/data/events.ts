@@ -39,6 +39,7 @@ export const events: Event[] = [
       "Initiez-vous aux bases du latte art dans un atelier de 1h30 chez Poésie. Apprenez à faire une mousse parfaite, à verser et à créer votre premier motif. ",
     eventType: "workshop",
     emoji: "☕️",
+    reservationLink: "https://www.instagram.com/lovelylivia_/",
   },
   {
     id: "broderie-stitched-tattoos",
@@ -52,6 +53,7 @@ export const events: Event[] = [
       "Un atelier d'art-thérapie textile pour adultes : chacun apporte un vêtement (chemise, t-shirt, etc.) et y brode des motifs inspirés de son été – souvenirs, émotions, rêves... Un moment introspectif et créatif, comme un journal visuel cousu main.",
     eventType: "workshop",
     emoji: "🪡",
+    reservationLink: "https://www.instagram.com/atkatharina/",
   },
   {
     id: "cafe-dessin",
@@ -93,6 +95,7 @@ export const events: Event[] = [
       "Rejoignez-nous pour un atelier chaleureux et créatif autour de l'aquarelle, guidé par l'artiste Celia Vongkorad. Vous apprendrez à composer une page de carnet de voyage, le tout accompagné d'une boisson de votre choix. Le matériel est fourni, mais vous pouvez également venir avec votre carnet ou vos outils préférés si vous le souhaitez. Vous peindrez sur du papier aquarelle de haute qualité de la marque Hahnemühle (format A5). Chaque participant(e) aura la chance de découvrir les aquarelles artisanales de La Nouvelle Vague Couleurs, fabriquées à Paris : des teintes uniques, intenses et inspirantes, parfaites pour tous les styles d'expression.",
     eventType: "workshop",
     emoji: "🎨",
+    reservationLink: "https://www.instagram.com/celia.vongkorad/",
   },
   {
     id: "ceramique",
@@ -106,6 +109,7 @@ export const events: Event[] = [
       "Participez à un atelier créatif et convivial pour découvrir l'art du modelage en céramique. Vous apprendrez les bases du travail de l'argile en explorant différentes techniques, avec la possibilité de créer la pièce de votre choix : tasse, assiette, porte-bijoux, vide-poche, petit soliflore… - Thème libre ou inspiration coffee shop : chacun peut laisser libre cours à son imagination ou suivre un thème pour plus de cohérence. ✔️ Tout est inclus : matériel, cuisson et émaillage réalisés après l'atelier. ✔️ Délais : vos pièces seront prêtes sous environ un mois. ✔️ Accessible à tous niveaux : débutants comme initiés sont les bienvenus. Offrez-vous un moment de créativité et repartez avec une pièce unique, façonnée par vos mains !",
     eventType: "workshop",
     emoji: "🍵",
+    reservationLink: "https://www.instagram.com/nalu.ceramics/",
   },
   {
     id: "ecriture",
