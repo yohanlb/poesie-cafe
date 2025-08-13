@@ -23,13 +23,8 @@ export default function Evenements() {
           {/* Page Title */}
           <div className="text-center mb-8">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground/95 tracking-wide">
-              Prochains ateliers / événements
+              Agenda
             </h1>
-            <div className="h-2"></div>
-            <p className="text-foreground/70">
-              Pour réserver un atelier, contactez directement l&apos;animateur
-              sur Instagram
-            </p>
           </div>
 
           <div className="h-6 md:h-8"></div>
