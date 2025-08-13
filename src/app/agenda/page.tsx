@@ -22,7 +22,7 @@ export default function Evenements() {
         <div className="flex-grow flex flex-col items-center justify-center py-8">
           {/* Page Title */}
           <div className="text-center mb-8">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground/95 tracking-wide">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-foreground/95 tracking-wide">
               Prochains ateliers / événements
             </h1>
             <div className="h-2"></div>
@@ -45,7 +45,7 @@ export default function Evenements() {
                       <div className="text-left mb-3">
                         <Badge
                           variant="secondary"
-                          className="text-lg px-4 py-2 bg-white border-gray-200 text-gray-900"
+                          className="text-lg px-4 py-2 bg-white border-gray-200 text-gray-900 font-normal"
                         >
                           {formatDate(date)}
                         </Badge>

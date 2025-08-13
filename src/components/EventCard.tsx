@@ -42,7 +42,7 @@ export default function EventCard({ event }: EventCardProps) {
             <span className="text-2xl">
               {getEventTypeEmoji(event.eventType)}
             </span>
-            <CardTitle className="text-gray-900 text-2xl font-semibold">
+            <CardTitle className="text-gray-900 text-2xl font-normal">
               {event.name}
             </CardTitle>
           </div>
