@@ -3,7 +3,7 @@ export interface Event {
   name: string;
   date: string;
   time: string;
-  price?: string;
+  price?: string | null;
   instructor?: string;
   instagram?: string;
   description?: string;
@@ -51,12 +51,12 @@ export const events: Event[] = [
     id: "cafe-dessin",
     name: "Atelier café dessin",
     date: "07/09/2025",
-    time: "15H-17H",
+    time: "15H-17H30",
     price: "25€",
     instructor: "Valentine",
     instagram: "@moood_de_val",
     description:
-      "Valentine vous initie au dessin dans une ambiance douce et créative. Ensemble, vous apprendrez les bases et croquerez les détails poétiques de Poésie, notre coffee shop. Aucune expérience requise, juste l'envie de prendre le temps et de dessiner autour d'un bon café. (boisson comprise dans le prix)",
+      "Valentine vous initie au dessin dans une ambiance douce et créative. Ensemble, vous apprendrez les bases et croquerez les détails poétiques de Poésie, notre coffee shop.Aucune expérience requise,juste l'envie de prendre le temps et de dessiner autour d'un bon café. (boisson comprise dans le prix)",
     eventType: "workshop",
   },
   {
@@ -88,7 +88,7 @@ export const events: Event[] = [
     name: "Atelier céramique",
     date: "17/09/2025",
     time: "18H30-20H",
-    price: "50€ (à confirmer)",
+    price: "50€",
     instructor: "Jess",
     instagram: "@nalu.ceramics",
     description: "",
@@ -99,10 +99,11 @@ export const events: Event[] = [
     name: "Atelier écriture",
     date: "27/09/2025",
     time: "9H-12H",
-    price: "35€ (à confirmer)",
+    price: "37€",
     instructor: "Marie",
     instagram: "@calliope_editions",
-    description: "",
+    description:
+      "Vous sentez votre élan créatif s'essouffler ? La page reste blanche malgré l'envie d'écrire ? Rejoignez notre atelier d'écriture spécialement conçu pour vous redonner l'inspiration. Au programme : Exercices ciblés pour déverrouiller la créativité et relancer vos idées, Échanges autour du thème du « vide » créatif, Conseils pratiques et pistes concrètes pour nourrir durablement votre écriture. Un petit groupe pour favoriser un accompagnement personnalisé et des retours bienveillants. Une boisson chaude ou froide et une gourmandise sucrée sont incluses pour accompagner ce moment suspendu. Tarif : 37 € TTC. ⏱ Durée : 3 heures, de 9h à 12h",
     eventType: "workshop",
   },
   {
@@ -110,6 +111,7 @@ export const events: Event[] = [
     name: "Running club",
     date: "07/09/2025",
     time: "10H-11H",
+    price: null,
     eventType: "running-club",
   },
   {
@@ -117,6 +119,7 @@ export const events: Event[] = [
     name: "Vernissage photo",
     date: "18/09/2025",
     time: "18H-22H",
+    price: null,
     instructor: "Jean",
     instagram: "@ginjeanbre",
     eventType: "vernissage",
@@ -126,6 +129,7 @@ export const events: Event[] = [
     name: "Running club",
     date: "21/09/2025",
     time: "10H-11H",
+    price: null,
     eventType: "running-club",
   },
 ];
