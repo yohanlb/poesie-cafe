@@ -35,28 +35,28 @@ export default function EventCard({ event }: EventCardProps) {
   };
 
   return (
-    <Card className="bg-card border-border backdrop-blur-md hover:bg-card/50 transition-colors">
+    <Card className="bg-white border-gray-200 backdrop-blur-md hover:bg-gray-50 transition-colors">
       <CardHeader>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="text-2xl">
               {getEventTypeEmoji(event.eventType)}
             </span>
-            <CardTitle className="text-card-foreground text-2xl font-semibold">
+            <CardTitle className="text-gray-900 text-2xl font-semibold">
               {event.name}
             </CardTitle>
           </div>
         </div>
-        <CardDescription className="text-muted-foreground">
+        <CardDescription className="text-gray-600">
           <div className="flex flex-wrap gap-2 text-sm">
-            <div className="flex items-center gap-1 text-foreground/80">
+            <div className="flex items-center gap-1 text-gray-700">
               <Clock className="w-4 h-4" />
               <span>{event.time}</span>
             </div>
             {event.price && (
               <Badge
                 variant="outline"
-                className="bg-primary/20 text-primary-foreground border-primary/30 hover:bg-primary/30"
+                className="bg-blue-100 text-blue-800 border-blue-200 hover:bg-blue-200"
               >
                 {event.price}
               </Badge>
@@ -67,7 +67,7 @@ export default function EventCard({ event }: EventCardProps) {
 
       {event.description && (
         <CardContent>
-          <p className="text-foreground/90 text-sm leading-relaxed text-left">
+          <p className="text-gray-700 text-sm leading-relaxed text-left">
             {event.description}
           </p>
         </CardContent>
@@ -75,16 +75,16 @@ export default function EventCard({ event }: EventCardProps) {
 
       <CardFooter className="w-full">
         {event.instructor && (
-          <div className="w-full flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-3 border-t border-border/40">
+          <div className="w-full flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-3 border-t border-gray-200">
             <div className="flex items-center gap-2">
               <Badge
                 variant="secondary"
-                className="w-8 h-8 bg-card-foreground/10 rounded-full flex items-center justify-center p-0 border-0"
+                className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center p-0 border-0"
                 aria-hidden="true"
               >
-                <Users className="w-4 h-4 text-white" />
+                <Users className="w-4 h-4 text-gray-600" />
               </Badge>
-              <span className="text-base font-normal text-white">
+              <span className="text-base font-normal text-gray-900">
                 {event.instructor}
               </span>
             </div>
@@ -99,7 +99,7 @@ export default function EventCard({ event }: EventCardProps) {
               >
                 <Badge
                   variant="secondary"
-                  className="flex items-center gap-1.5 bg-purple-500/50 hover:bg-purple-600/50 text-white border-0 px-3 py-1.5 rounded-full transition-colors"
+                  className="flex items-center gap-1.5 bg-purple-100 hover:bg-purple-200 text-purple-800 border-0 px-3 py-1.5 rounded-full transition-colors"
                 >
                   <Instagram
                     className="w-4 h-4 flex-shrink-0"

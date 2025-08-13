@@ -45,7 +45,7 @@ export default function Evenements() {
                       <div className="text-left mb-3">
                         <Badge
                           variant="secondary"
-                          className="text-lg px-4 py-2 bg-card border-border text-foreground"
+                          className="text-lg px-4 py-2 bg-white border-gray-200 text-gray-900"
                         >
                           {formatDate(date)}
                         </Badge>
@@ -61,9 +61,9 @@ export default function Evenements() {
                   ))}
                 </div>
               ) : (
-                <Card className="bg-card/60 border-border/40">
+                <Card className="bg-white border-gray-200">
                   <CardContent className="p-8 text-center">
-                    <p className="text-foreground/70">
+                    <p className="text-gray-600">
                       Aucun événement programmé pour le moment.
                     </p>
                   </CardContent>
