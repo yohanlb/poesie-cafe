@@ -19,6 +19,17 @@ export default function EventCard({ event }: EventCardProps) {
     return handle.replace("@", "");
   };
 
+  const isInstagramLink = (url: string) => {
+    return url.includes("instagram.com") || url.includes("instagram.fr");
+  };
+
+  const getReservationText = (reservationLink: string) => {
+    if (isInstagramLink(reservationLink)) {
+      return { text: "Réservation par message: ", linkText: "Ici" };
+    }
+    return { text: "Réservation: ", linkText: "Ici" };
+  };
+
   return (
     <Card className="bg-white border-gray-200 backdrop-blur-md hover:bg-gray-50 transition-colors">
       <CardHeader>
@@ -48,10 +59,31 @@ export default function EventCard({ event }: EventCardProps) {
         </CardDescription>
       </CardHeader>
 
-      {event.description && (
+      {(event.description || event.reservationLink) && (
         <CardContent>
           <p className="text-gray-700 text-sm leading-relaxed text-left">
             {event.description}
+            {event.reservationLink && (
+              <>
+                {event.description && (
+                  <>
+                    <br />
+                    <br />
+                  </>
+                )}
+                <span>
+                  {getReservationText(event.reservationLink).text}
+                  <a
+                    href={event.reservationLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 underline"
+                  >
+                    {getReservationText(event.reservationLink).linkText}
+                  </a>
+                </span>
+              </>
+            )}
           </p>
         </CardContent>
       )}
