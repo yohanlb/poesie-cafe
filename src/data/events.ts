@@ -40,7 +40,7 @@ export const events: Event[] = [
     name: "Art club - Kids (6-8 ans)",
     date: "03/09/2025",
     time: "10H30-12H",
-    price: "20€",
+    price: "25€",
     instructor: "Katharina",
     instagram: "@atkatharina",
     description:
@@ -92,7 +92,7 @@ export const events: Event[] = [
       "Atelier Carnet de voyage : Apprenez à capturer vos souvenirs en mots et en illustrations, et repartez avec de nouvelles pages dans votre carnet qui raconte vos aventures de cet été. Ouverts à tous, débutants comme passionnés, pour dessiner et voyager le temps d'un café. (boisson comprise dans le prix)",
     eventType: "workshop",
     emoji: "🎨",
-    reservationLink: "https://www.instagram.com/p/DNFzPxLs0L3/?img_index=1",
+    reservationLink: "https://www.instagram.com/moood_de_val/",
     fullyBooked: false,
   },
   {
@@ -100,7 +100,7 @@ export const events: Event[] = [
     name: "Art club - Kids (8-10 ans)",
     date: "10/09/2025",
     time: "10H30-12H",
-    price: "20€",
+    price: "25€",
     instructor: "Katharina",
     instagram: "@atkatharina",
     description:
