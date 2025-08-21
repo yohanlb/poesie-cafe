@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Footer from "@components/Footer";
+import { Button } from "@components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -37,6 +39,20 @@ export default function Home() {
             <span>SAMEDI - DIMANCHE</span>
             <span>10:00 – 18:00</span>
           </p>
+        </div>
+
+        {/* Agenda Button */}
+        <div className="mt-8">
+          <Button
+            variant="outline"
+            size="lg"
+            asChild
+            className="bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/30 text-md px-8 py-3"
+          >
+            <Link href="/agenda" className="uppercase">
+              Voir l&apos;Agenda
+            </Link>
+          </Button>
         </div>
       </div>
 
