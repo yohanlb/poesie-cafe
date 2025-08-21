@@ -31,13 +31,22 @@ export default function EventCard({ event }: EventCardProps) {
   };
 
   return (
-    <Card className="bg-white border-gray-200 backdrop-blur-md hover:bg-gray-50 transition-colors">
+    <Card
+      className={`${
+        event.fullyBooked ? "bg-gray-100" : "bg-white"
+      } border-gray-200 backdrop-blur-md hover:bg-gray-50 transition-colors`}
+    >
       <CardHeader>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="text-2xl">{event.emoji || "📅"}</span>
             <CardTitle className="text-gray-900 text-2xl font-normal">
               {event.name}
+              {event.fullyBooked && (
+                <span className="text-red-600 font-medium text-lg ml-2">
+                  (complet)
+                </span>
+              )}
             </CardTitle>
           </div>
         </div>
@@ -77,13 +86,21 @@ export default function EventCard({ event }: EventCardProps) {
                     <br />
                   </>
                 )}
-                <span>
+                <span
+                  className={
+                    event.fullyBooked ? "line-through text-gray-500" : ""
+                  }
+                >
                   {getReservationText(event.reservationLink).text}
                   <a
                     href={event.reservationLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 hover:text-blue-800 underline"
+                    className={`${
+                      event.fullyBooked
+                        ? "line-through text-gray-500"
+                        : "text-blue-600 hover:text-blue-800"
+                    } underline`}
                   >
                     {getReservationText(event.reservationLink).linkText}
                   </a>
