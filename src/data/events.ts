@@ -85,7 +85,7 @@ export const events: Event[] = [
     name: "Atelier Carnet de voyage",
     date: "07/09/2025",
     time: "15H-17H30",
-    price: "25€",
+    price: "35€",
     instructor: "Valentine",
     instagram: "@moood_de_val",
     description:
