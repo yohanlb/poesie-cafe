@@ -1,12 +1,7 @@
-import { Event } from "../data/events";
+import { Event } from "../types/event";
 
-/**
- * Formats a date string (DD/MM/YYYY) to a French locale string with proper capitalization
- */
-export const formatDate = (dateString: string): string => {
+export const formatDate = (date: Date): string => {
   try {
-    const [day, month, year] = dateString.split("/");
-    const date = new Date(`${year}-${month}-${day}`);
     const formattedDate = date.toLocaleDateString("fr-FR", {
       weekday: "long",
       day: "numeric",
@@ -14,10 +9,8 @@ export const formatDate = (dateString: string): string => {
       year: "numeric",
     });
 
-    // Capitalize the first letter of day and month
     const words = formattedDate.split(" ");
     const capitalizedWords = words.map((word) => {
-      // Check if the word is a day or month (not a number or year)
       if (isNaN(Number(word)) && word.length > 2) {
         return word.charAt(0).toUpperCase() + word.slice(1);
       }
@@ -26,92 +19,50 @@ export const formatDate = (dateString: string): string => {
 
     return capitalizedWords.join(" ");
   } catch {
-    return dateString; // Fallback to original string if parsing fails
+    return date.toDateString();
   }
 };
 
-/**
- * Groups events by date and returns a record with dates as keys
- */
+export const formatTime = (date: Date): string => {
+  // Use UTC methods to avoid timezone conversion issues
+  const hours = date.getUTCHours().toString().padStart(2, "0");
+  const minutes = date.getUTCMinutes().toString().padStart(2, "0");
+  return `${hours}H${minutes}`;
+};
+
+export const formatDuration = (duration: number): string => {
+  if (duration === 1) return "1h";
+  if (duration % 1 === 0) return `${duration}h`;
+  const hours = Math.floor(duration);
+  const minutes = Math.round((duration % 1) * 60);
+  if (minutes === 0) return `${hours}h`;
+  return `${hours}h${minutes}`;
+};
+
+export const getEndTime = (startDate: Date, duration: number): string => {
+  // Create end date using UTC time to avoid timezone issues
+  const endDate = new Date(startDate.getTime() + duration * 60 * 60 * 1000);
+  return formatTime(endDate);
+};
+
 export const groupEventsByDate = (events: Event[]): Record<string, Event[]> => {
-  return events.reduce((acc, event) => {
-    if (!acc[event.date]) {
-      acc[event.date] = [];
+  const grouped = events.reduce((acc, event) => {
+    const dateKey = event.date.toISOString().split("T")[0];
+    if (!acc[dateKey]) {
+      acc[dateKey] = [];
     }
-    acc[event.date].push(event);
+    acc[dateKey].push(event);
     return acc;
   }, {} as Record<string, Event[]>);
+
+  // Sort events by time within each date group
+  Object.keys(grouped).forEach((dateKey) => {
+    grouped[dateKey].sort((a, b) => a.date.getTime() - b.date.getTime());
+  });
+
+  return grouped;
 };
 
-/**
- * Sorts dates chronologically (DD/MM/YYYY format)
- */
 export const sortDatesChronologically = (dates: string[]): string[] => {
-  return dates.sort((a, b) => {
-    const dateA = new Date(a.split("/").reverse().join("-"));
-    const dateB = new Date(b.split("/").reverse().join("-"));
-    return dateA.getTime() - dateB.getTime();
-  });
-};
-
-/**
- * Gets events for a specific date
- */
-export const getEventsByDate = (events: Event[], date: string): Event[] => {
-  return events.filter((event) => event.date === date);
-};
-
-/**
- * Gets events by type
- */
-export const getEventsByType = (
-  events: Event[],
-  eventType: Event["eventType"]
-): Event[] => {
-  return events.filter((event) => event.eventType === eventType);
-};
-
-/**
- * Gets all workshops
- */
-export const getWorkshops = (events: Event[]): Event[] => {
-  return events.filter((event) => event.eventType === "workshop");
-};
-
-/**
- * Gets all running clubs
- */
-export const getRunningClubs = (events: Event[]): Event[] => {
-  return events.filter((event) => event.eventType === "running-club");
-};
-
-/**
- * Gets all vernissages
- */
-export const getVernissages = (events: Event[]): Event[] => {
-  return events.filter((event) => event.eventType === "vernissage");
-};
-
-/**
- * Gets upcoming events (events from today onwards)
- */
-export const getUpcomingEvents = (events: Event[]): Event[] => {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0); // Reset time to start of day
-  return events.filter((event) => {
-    const eventDate = new Date(event.date.split("/").reverse().join("-"));
-    return eventDate >= today;
-  });
-};
-
-/**
- * Gets upcoming workshops (workshops from today onwards)
- */
-export const getUpcomingWorkshops = (events: Event[]): Event[] => {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0); // Reset time to start of day
-  return events.filter((event) => {
-    const eventDate = new Date(event.date.split("/").reverse().join("-"));
-    return eventDate >= today && event.eventType === "workshop";
-  });
+  return dates.sort((a, b) => a.localeCompare(b));
 };

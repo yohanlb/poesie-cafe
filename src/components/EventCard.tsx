@@ -1,5 +1,7 @@
 import { Clock, Instagram, Users } from "lucide-react";
-import { Event } from "../data/events";
+import { formatTime, formatDuration, getEndTime } from "../lib/event-utils";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import {
   Card,
   CardContent,
@@ -9,14 +11,23 @@ import {
   CardTitle,
 } from "./ui/card";
 import { Badge } from "@components/ui/badge";
+import { Event } from "../types/event";
 
-interface EventCardProps {
-  event: Event;
-}
-
-export default function EventCard({ event }: EventCardProps) {
+export default function EventCard({ event }: { event: Event }) {
   const cleanInstagramHandle = (handle: string) => {
     return handle.replace("@", "");
+  };
+
+  const formatedPrice = (): string => {
+    if (event.price === 0) {
+      return "Gratuit";
+    }
+
+    return event.price + "€";
+  };
+
+  const isEventFullyBooked = () => {
+    return event.availability === "Complet";
   };
 
   const isInstagramLink = (url: string) => {
@@ -33,7 +44,7 @@ export default function EventCard({ event }: EventCardProps) {
   return (
     <Card
       className={`${
-        event.fullyBooked ? "bg-gray-100" : "bg-white"
+        isEventFullyBooked() ? "bg-gray-100" : "bg-white"
       } border-gray-200 backdrop-blur-md hover:bg-gray-50 transition-colors`}
     >
       <CardHeader>
@@ -42,7 +53,7 @@ export default function EventCard({ event }: EventCardProps) {
             <span className="text-2xl">{event.emoji || "📅"}</span>
             <CardTitle className="text-gray-900 text-2xl font-normal">
               {event.name}
-              {event.fullyBooked && (
+              {isEventFullyBooked() && (
                 <span className="text-red-600 font-medium text-lg ml-2">
                   (complet)
                 </span>
@@ -54,14 +65,18 @@ export default function EventCard({ event }: EventCardProps) {
           <div className="flex flex-wrap gap-2 text-sm">
             <div className="flex items-center gap-1 text-gray-700">
               <Clock className="w-4 h-4" />
-              <span>{event.time}</span>
+              <span>
+                {formatTime(event.date)}-
+                {getEndTime(event.date, event.duration)} (
+                {formatDuration(event.duration)})
+              </span>
             </div>
-            {event.price && (
+            {event.price !== undefined && (
               <Badge
                 variant="outline"
                 className="bg-blue-100 text-blue-800 border-blue-200 hover:bg-blue-200"
               >
-                {event.price}
+                {formatedPrice()}
               </Badge>
             )}
           </div>
@@ -71,13 +86,13 @@ export default function EventCard({ event }: EventCardProps) {
       {(event.description || event.reservationLink) && (
         <CardContent>
           <div className="text-gray-700 text-sm leading-relaxed text-left">
-            {event.description &&
-              event.description.split("\n").map((line, index, array) => (
-                <span key={index}>
-                  {line}
-                  {index < array.length - 1 && <br />}
-                </span>
-              ))}
+            {event.description && (
+              <div className="prose prose-sm prose-neutral max-w-none">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {event.description ?? ""}
+                </ReactMarkdown>
+              </div>
+            )}
             {event.reservationLink && (
               <>
                 {event.description && (
@@ -88,7 +103,7 @@ export default function EventCard({ event }: EventCardProps) {
                 )}
                 <span
                   className={
-                    event.fullyBooked ? "line-through text-gray-500" : ""
+                    isEventFullyBooked() ? "line-through text-gray-500" : ""
                   }
                 >
                   {getReservationText(event.reservationLink).text}
@@ -97,7 +112,7 @@ export default function EventCard({ event }: EventCardProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`${
-                      event.fullyBooked
+                      isEventFullyBooked()
                         ? "line-through text-gray-500"
                         : "text-blue-600 hover:text-blue-800"
                     } underline`}

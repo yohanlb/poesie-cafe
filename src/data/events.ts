@@ -1,31 +1,12 @@
-export interface Event {
-  id: string;
-  name: string;
-  date: string;
-  time: string;
-  price?: string;
-  instructor?: string;
-  instagram?: string;
-  description?: string;
-  eventType:
-    | "workshop"
-    | "running-club"
-    | "vernissage"
-    | "other"
-    | "yoga"
-    | "brunch";
-  emoji?: string;
-  reservationLink?: string;
-  fullyBooked: boolean;
-}
+import { Event } from "../types/event";
 
 export const events: Event[] = [
   {
     id: "scrapbooking",
     name: "Atelier Scrapbooking",
-    date: "27/08/2025",
-    time: "18H30-20H30",
-    price: "25€",
+    date: new Date("2025-08-27T18:30:00"),
+    duration: 2,
+    price: 25,
     instructor: "Léa",
     instagram: "@lea_fraisse",
     description:
@@ -33,14 +14,14 @@ export const events: Event[] = [
     eventType: "workshop",
     emoji: "✂️",
     reservationLink: "https://www.instagram.com/lea__fraisse/",
-    fullyBooked: false,
+    availability: "Disponible",
   },
   {
     id: "art-club-kids-1",
     name: "Art club - Kids (6-8 ans)",
-    date: "03/09/2025",
-    time: "10H30-12H",
-    price: "25€",
+    date: new Date("2025-09-03T10:30:00"),
+    duration: 1.5,
+    price: 25,
     instructor: "Katharina",
     instagram: "@atkatharina",
     description:
@@ -48,14 +29,14 @@ export const events: Event[] = [
     eventType: "workshop",
     emoji: "🌈",
     reservationLink: "https://lu.ma/2drj91pa",
-    fullyBooked: false,
+    availability: "Disponible",
   },
   {
     id: "latte-art",
     name: "Atelier latte art",
-    date: "03/09/2025",
-    time: "18H30-20H",
-    price: "55€",
+    date: new Date("2025-09-03T18:30:00"),
+    duration: 1.5,
+    price: 55,
     instructor: "Livia",
     instagram: "@lovelylivia_",
     description:
@@ -63,14 +44,14 @@ export const events: Event[] = [
     eventType: "workshop",
     emoji: "☕️",
     reservationLink: "https://www.instagram.com/lovelylivia_/",
-    fullyBooked: true,
+    availability: "Complet",
   },
   {
     id: "broderie-art-therapie",
     name: "Atelier broderie - Art therapie",
-    date: "06/09/2025",
-    time: "10H-12H30",
-    price: "30€",
+    date: new Date("2025-09-06T10:00:00"),
+    duration: 2.5,
+    price: 30,
     instructor: "Katharina",
     instagram: "@atkatharina",
     description:
@@ -78,14 +59,14 @@ export const events: Event[] = [
     eventType: "workshop",
     emoji: "🪡",
     reservationLink: "https://lu.ma/prguusrw",
-    fullyBooked: false,
+    availability: "Disponible",
   },
   {
     id: "carnet-voyage",
     name: "Atelier Carnet de voyage",
-    date: "07/09/2025",
-    time: "15H-17H30",
-    price: "35€",
+    date: new Date("2025-09-07T15:00:00"),
+    duration: 2.5,
+    price: 35,
     instructor: "Valentine",
     instagram: "@moood_de_val",
     description:
@@ -93,14 +74,14 @@ export const events: Event[] = [
     eventType: "workshop",
     emoji: "🎨",
     reservationLink: "https://www.instagram.com/moood_de_val/",
-    fullyBooked: false,
+    availability: "Disponible",
   },
   {
     id: "art-club-kids-2",
     name: "Art club - Kids (8-10 ans)",
-    date: "10/09/2025",
-    time: "10H30-12H",
-    price: "25€",
+    date: new Date("2025-09-10T10:30:00"),
+    duration: 1.5,
+    price: 25,
     instructor: "Katharina",
     instagram: "@atkatharina",
     description:
@@ -108,14 +89,14 @@ export const events: Event[] = [
     eventType: "workshop",
     emoji: "🌈",
     reservationLink: "https://lu.ma/ky9n71cw",
-    fullyBooked: false,
+    availability: "Disponible",
   },
   {
     id: "aquarelle",
     name: "Atelier Aquarelle",
-    date: "10/09/2025",
-    time: "18H30-21H",
-    price: "40€",
+    date: new Date("2025-09-10T18:30:00"),
+    duration: 2.5,
+    price: 40,
     instructor: "Célia",
     instagram: "@celia.vongkorad",
     description:
@@ -123,14 +104,14 @@ export const events: Event[] = [
     eventType: "workshop",
     emoji: "🎨",
     reservationLink: "https://www.instagram.com/celia.vongkorad/",
-    fullyBooked: false,
+    availability: "Disponible",
   },
   {
     id: "yoga-vinyasa",
     name: "Yoga Vinyasa",
-    date: "13/09/2025",
-    time: "8H45-9H45",
-    price: "15€",
+    date: new Date("2025-09-13T08:45:00"),
+    duration: 1,
+    price: 15,
     instructor: "Coralee",
     instagram: "@coraleeats",
     description:
@@ -138,14 +119,14 @@ export const events: Event[] = [
     eventType: "yoga",
     emoji: "🧘‍♀️",
     reservationLink: "https://www.instagram.com/coraleeats/",
-    fullyBooked: false,
+    availability: "Disponible",
   },
   {
     id: "ceramique",
     name: "Atelier céramique",
-    date: "17/09/2025",
-    time: "18H30-20H",
-    price: "50€",
+    date: new Date("2025-09-17T18:30:00"),
+    duration: 1.5,
+    price: 50,
     instructor: "Jess",
     instagram: "@nalu.ceramics",
     description:
@@ -153,14 +134,14 @@ export const events: Event[] = [
     eventType: "workshop",
     emoji: "🍵",
     reservationLink: "https://www.instagram.com/nalu.ceramics/",
-    fullyBooked: false,
+    availability: "Disponible",
   },
   {
     id: "ecriture",
     name: "Atelier écriture",
-    date: "27/09/2025",
-    time: "9H-12H",
-    price: "37€",
+    date: new Date("2025-09-27T09:00:00"),
+    duration: 3,
+    price: 37,
     instructor: "Marie",
     instagram: "@calliope_editions",
     description:
@@ -168,60 +149,60 @@ export const events: Event[] = [
     eventType: "workshop",
     emoji: "📖",
     reservationLink: "https://www.calliope-editions.fr/actualit%C3%A9s",
-    fullyBooked: false,
+    availability: "Disponible",
   },
   {
     id: "running-club-1",
     name: "Running club",
-    date: "07/09/2025",
-    time: "10H-11H",
-    price: "gratuit",
+    date: new Date("2025-09-07T10:00:00"),
+    duration: 1,
+    price: 0,
     instagram: "@poesiecoffee",
     description:
       "📍 Départ & arrivée : Poésie coffee, 10 passage Thiéré – Paris 11e\n🛣️ Parcours : 7km organisé par Chloé (Strava Chloé Fouillot)\n\n💌 L'événement est gratuit, mais il faudra réserver sa place en envoyant un message directement sur le compte de Poésie pour une question d'organisation.\nN'hésitez pas à indiquer également votre allure de course pour que l'on sache si la création de plusieurs groupes est nécessaire.",
     eventType: "running-club",
     emoji: "🏃‍♀️🏃",
     reservationLink: "https://www.instagram.com/poesiecoffee/",
-    fullyBooked: false,
+    availability: "Disponible",
   },
   {
     id: "vernissage-photo",
     name: "Vernissage photo",
-    date: "18/09/2025",
-    time: "18H-22H",
-    price: "gratuit",
+    date: new Date("2025-09-18T18:00:00"),
+    duration: 4,
+    price: 0,
     instructor: "Jean",
     instagram: "@ginjeanbre",
     description:
       "Poésie accueillera pendant un mois les photographies argentiques de Jean.\nPour marquer l'événement, rendez-vous au vernissage de 18h à 22h : un moment convivial pour prolonger les souvenirs d'été autour de boissons fraîches et de douceurs salées et sucrées.",
     eventType: "vernissage",
     emoji: "🖼️",
-    fullyBooked: false,
+    availability: "Disponible",
   },
   {
     id: "running-club-2",
     name: "Running club",
-    date: "21/09/2025",
-    time: "10H-11H",
-    price: "gratuit",
+    date: new Date("2025-09-21T10:00:00"),
+    duration: 1,
+    price: 0,
     instagram: "@poesiecoffee",
     description:
       "📍 Départ & arrivée : Poésie coffee, 10 passage Thiéré – Paris 11e\n🛣️ Parcours : 7km organisé par Chloé (Strava Chloé Fouillot)\n\n💌 L'événement est gratuit, mais il faudra réserver sa place en envoyant un message directement sur le compte de Poésie pour une question d'organisation.\nN'hésitez pas à indiquer également votre allure de course pour que l'on sache si la création de plusieurs groupes est nécessaire.",
     eventType: "running-club",
     emoji: "🏃‍♀️🏃",
     reservationLink: "https://www.instagram.com/poesiecoffee/",
-    fullyBooked: false,
+    availability: "Disponible",
   },
   {
     id: "brunch",
     name: "Brunch",
-    date: "21/09/2025",
-    time: "11H-15H",
-    price: "gratuit",
+    date: new Date("2025-09-21T11:00:00"),
+    duration: 4,
+    price: 0,
     instagram: "@poesiecoffee",
     description:
       "Poésie vous accueille pour un brunch de 11h à 15h ! Coralie (@corcorhardcore) a imaginé deux menus gourmands : une version végétarienne et une version autour du poisson de chez Poiscaille. Réservation directement via le compte instagram de Poésie.",
     eventType: "brunch",
-    fullyBooked: false,
+    availability: "Disponible",
   },
 ];
