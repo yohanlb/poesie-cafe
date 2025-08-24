@@ -1,7 +1,6 @@
 import Footer from "../../components/Footer";
 import EventCard from "../../components/EventCard";
 import Navbar from "../../components/Navbar";
-import { events } from "../../data/events";
 import {
   formatDate,
   groupEventsByDate,
@@ -9,8 +8,10 @@ import {
 } from "../../lib/event-utils";
 import { Card, CardContent } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
+import { getEventsFromAirtable } from "../../lib/airtable-service";
 
-export default function Evenements() {
+export default async function Evenements() {
+  const events = await getEventsFromAirtable();
   const eventsByDate = groupEventsByDate(events);
   const sortedDates = sortDatesChronologically(Object.keys(eventsByDate));
 

@@ -20,6 +20,15 @@ export default function EventCard({ event }: EventCardProps) {
     return handle.replace("@", "");
   };
 
+  const formatedPrice = (): string => {
+    console.log(event.price);
+    if (!event.price || event.price == 0) {
+      return "Gratuit";
+    }
+
+    return event.price + "€";
+  };
+
   const isInstagramLink = (url: string) => {
     return url.includes("instagram.com") || url.includes("instagram.fr");
   };
@@ -61,14 +70,12 @@ export default function EventCard({ event }: EventCardProps) {
                 {formatDuration(event.duration)})
               </span>
             </div>
-            {event.price && (
-              <Badge
-                variant="outline"
-                className="bg-blue-100 text-blue-800 border-blue-200 hover:bg-blue-200"
-              >
-                {event.price}
-              </Badge>
-            )}
+            <Badge
+              variant="outline"
+              className="bg-blue-100 text-blue-800 border-blue-200 hover:bg-blue-200"
+            >
+              {formatedPrice()}
+            </Badge>
           </div>
         </CardDescription>
       </CardHeader>

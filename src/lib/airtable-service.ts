@@ -14,22 +14,24 @@ export const getEventsFromAirtable = async (): Promise<Event[]> => {
     const base = airtable.base(process.env.AIRTABLE_BASE_ID);
     const records = await base("Events").select().all();
 
-    return records.map(
+    const events = records.map(
       (record): Event => ({
         id: record.id,
-        name: (record.get("Name") as string) || "",
+        name: (record.get("Event Name") as string) || "",
         date: new Date(record.get("Date") as string),
         duration: (record.get("Duration") as number) || 1,
         price: record.get("Price") as string,
-        instructor: record.get("Instructor") as string,
+        instructor: record.get("Host") as string,
         instagram: record.get("Instagram") as string,
         description: record.get("Description") as string,
-        eventType: (record.get("EventType") as Event["eventType"]) || "other",
+        eventType: (record.get("Event Type") as Event["eventType"]) || "other",
         emoji: record.get("Emoji") as string,
-        reservationLink: record.get("ReservationLink") as string,
-        fullyBooked: (record.get("FullyBooked") as boolean) || false,
+        reservationLink: record.get("Reservation Link") as string,
+        fullyBooked: (record.get("Fully Booked") as boolean) || false,
+        isReady: (record.get("IsReady") as boolean) || false,
       })
     );
+    return events.filter((event) => !event.isReady);
   } catch (error) {
     console.error("Error fetching from Airtable:", error);
     throw error;

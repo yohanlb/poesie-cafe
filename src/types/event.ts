@@ -17,4 +17,5 @@ export interface Event {
   emoji?: string;
   reservationLink?: string;
   fullyBooked: boolean;
+  isReady: boolean;
 }
