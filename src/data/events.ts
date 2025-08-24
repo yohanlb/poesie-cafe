@@ -1,8 +1,8 @@
 export interface Event {
   id: string;
   name: string;
-  date: string;
-  time: string;
+  date: Date;
+  duration: number; // Duration in hours
   price?: string;
   instructor?: string;
   instagram?: string;
@@ -23,8 +23,8 @@ export const events: Event[] = [
   {
     id: "scrapbooking",
     name: "Atelier Scrapbooking",
-    date: "27/08/2025",
-    time: "18H30-20H30",
+    date: new Date("2025-08-27T18:30:00"),
+    duration: 2,
     price: "25€",
     instructor: "Léa",
     instagram: "@lea_fraisse",
@@ -38,8 +38,8 @@ export const events: Event[] = [
   {
     id: "art-club-kids-1",
     name: "Art club - Kids (6-8 ans)",
-    date: "03/09/2025",
-    time: "10H30-12H",
+    date: new Date("2025-09-03T10:30:00"),
+    duration: 1.5,
     price: "25€",
     instructor: "Katharina",
     instagram: "@atkatharina",
@@ -53,8 +53,8 @@ export const events: Event[] = [
   {
     id: "latte-art",
     name: "Atelier latte art",
-    date: "03/09/2025",
-    time: "18H30-20H",
+    date: new Date("2025-09-03T18:30:00"),
+    duration: 1.5,
     price: "55€",
     instructor: "Livia",
     instagram: "@lovelylivia_",
@@ -68,8 +68,8 @@ export const events: Event[] = [
   {
     id: "broderie-art-therapie",
     name: "Atelier broderie - Art therapie",
-    date: "06/09/2025",
-    time: "10H-12H30",
+    date: new Date("2025-09-06T10:00:00"),
+    duration: 2.5,
     price: "30€",
     instructor: "Katharina",
     instagram: "@atkatharina",
@@ -83,8 +83,8 @@ export const events: Event[] = [
   {
     id: "carnet-voyage",
     name: "Atelier Carnet de voyage",
-    date: "07/09/2025",
-    time: "15H-17H30",
+    date: new Date("2025-09-07T15:00:00"),
+    duration: 2.5,
     price: "35€",
     instructor: "Valentine",
     instagram: "@moood_de_val",
@@ -98,8 +98,8 @@ export const events: Event[] = [
   {
     id: "art-club-kids-2",
     name: "Art club - Kids (8-10 ans)",
-    date: "10/09/2025",
-    time: "10H30-12H",
+    date: new Date("2025-09-10T10:30:00"),
+    duration: 1.5,
     price: "25€",
     instructor: "Katharina",
     instagram: "@atkatharina",
@@ -113,8 +113,8 @@ export const events: Event[] = [
   {
     id: "aquarelle",
     name: "Atelier Aquarelle",
-    date: "10/09/2025",
-    time: "18H30-21H",
+    date: new Date("2025-09-10T18:30:00"),
+    duration: 2.5,
     price: "40€",
     instructor: "Célia",
     instagram: "@celia.vongkorad",
@@ -128,8 +128,8 @@ export const events: Event[] = [
   {
     id: "yoga-vinyasa",
     name: "Yoga Vinyasa",
-    date: "13/09/2025",
-    time: "8H45-9H45",
+    date: new Date("2025-09-13T08:45:00"),
+    duration: 1,
     price: "15€",
     instructor: "Coralee",
     instagram: "@coraleeats",
@@ -143,8 +143,8 @@ export const events: Event[] = [
   {
     id: "ceramique",
     name: "Atelier céramique",
-    date: "17/09/2025",
-    time: "18H30-20H",
+    date: new Date("2025-09-17T18:30:00"),
+    duration: 1.5,
     price: "50€",
     instructor: "Jess",
     instagram: "@nalu.ceramics",
@@ -158,8 +158,8 @@ export const events: Event[] = [
   {
     id: "ecriture",
     name: "Atelier écriture",
-    date: "27/09/2025",
-    time: "9H-12H",
+    date: new Date("2025-09-27T09:00:00"),
+    duration: 3,
     price: "37€",
     instructor: "Marie",
     instagram: "@calliope_editions",
@@ -173,8 +173,8 @@ export const events: Event[] = [
   {
     id: "running-club-1",
     name: "Running club",
-    date: "07/09/2025",
-    time: "10H-11H",
+    date: new Date("2025-09-07T10:00:00"),
+    duration: 1,
     price: "gratuit",
     instagram: "@poesiecoffee",
     description:
@@ -187,8 +187,8 @@ export const events: Event[] = [
   {
     id: "vernissage-photo",
     name: "Vernissage photo",
-    date: "18/09/2025",
-    time: "18H-22H",
+    date: new Date("2025-09-18T18:00:00"),
+    duration: 4,
     price: "gratuit",
     instructor: "Jean",
     instagram: "@ginjeanbre",
@@ -201,8 +201,8 @@ export const events: Event[] = [
   {
     id: "running-club-2",
     name: "Running club",
-    date: "21/09/2025",
-    time: "10H-11H",
+    date: new Date("2025-09-21T10:00:00"),
+    duration: 1,
     price: "gratuit",
     instagram: "@poesiecoffee",
     description:
@@ -215,8 +215,8 @@ export const events: Event[] = [
   {
     id: "brunch",
     name: "Brunch",
-    date: "21/09/2025",
-    time: "11H-15H",
+    date: new Date("2025-09-21T11:00:00"),
+    duration: 4,
     price: "gratuit",
     instagram: "@poesiecoffee",
     description:

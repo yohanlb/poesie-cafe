@@ -1,5 +1,6 @@
 import { Clock, Instagram, Users } from "lucide-react";
 import { Event } from "../data/events";
+import { formatTime, formatDuration, getEndTime } from "../lib/event-utils";
 import {
   Card,
   CardContent,
@@ -54,7 +55,11 @@ export default function EventCard({ event }: EventCardProps) {
           <div className="flex flex-wrap gap-2 text-sm">
             <div className="flex items-center gap-1 text-gray-700">
               <Clock className="w-4 h-4" />
-              <span>{event.time}</span>
+              <span>
+                {formatTime(event.date)}-
+                {getEndTime(event.date, event.duration)} (
+                {formatDuration(event.duration)})
+              </span>
             </div>
             {event.price && (
               <Badge

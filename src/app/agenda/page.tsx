@@ -32,21 +32,21 @@ export default function Evenements() {
             <section>
               {sortedDates.length > 0 ? (
                 <div className="space-y-8">
-                  {sortedDates.map((date) => (
-                    <div key={date} className="space-y-4">
+                  {sortedDates.map((dateKey) => (
+                    <div key={dateKey} className="space-y-4">
                       {/* Date Header */}
                       <div className="text-left mb-3">
                         <Badge
                           variant="secondary"
                           className="text-lg px-4 py-2 bg-white border-gray-200 text-gray-900 font-normal"
                         >
-                          {formatDate(date)}
+                          {formatDate(new Date(dateKey))}
                         </Badge>
                       </div>
 
                       {/* Events for this date */}
                       <div className="space-y-6">
-                        {eventsByDate[date].map((event) => (
+                        {eventsByDate[dateKey].map((event) => (
                           <EventCard key={event.id} event={event} />
                         ))}
                       </div>
