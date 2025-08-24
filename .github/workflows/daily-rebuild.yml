@@ -8,12 +8,6 @@ jobs:
   rebuild:
     runs-on: ubuntu-latest
     steps:
-      - name: Debug (remove this later)
-        run: |
-          echo "Secret length: ${#VERCEL_DEPLOY_HOOK_URL}"
-          echo "Secret starts with: ${VERCEL_DEPLOY_HOOK_URL:0:10}"
-        env:
-          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
       - name: Trigger Vercel Rebuild
         run: |
           curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK_URL }}"
