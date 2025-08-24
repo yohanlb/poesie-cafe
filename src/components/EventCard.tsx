@@ -1,5 +1,7 @@
 import { Clock, Instagram, Users } from "lucide-react";
 import { formatTime, formatDuration, getEndTime } from "../lib/event-utils";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import {
   Card,
   CardContent,
@@ -84,13 +86,13 @@ export default function EventCard({ event }: { event: Event }) {
       {(event.description || event.reservationLink) && (
         <CardContent>
           <div className="text-gray-700 text-sm leading-relaxed text-left">
-            {event.description &&
-              event.description.split("\n").map((line, index, array) => (
-                <span key={index}>
-                  {line}
-                  {index < array.length - 1 && <br />}
-                </span>
-              ))}
+            {event.description && (
+              <div className="prose prose-sm prose-neutral max-w-none">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {event.description ?? ""}
+                </ReactMarkdown>
+              </div>
+            )}
             {event.reservationLink && (
               <>
                 {event.description && (
