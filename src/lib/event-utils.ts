@@ -1,4 +1,4 @@
-import { Event } from "../data/events";
+import { Event } from "../types/event";
 
 export const formatDate = (date: Date): string => {
   try {
