@@ -17,7 +17,6 @@ export default function EventCard({ event }: { event: Event }) {
   };
 
   const formatedPrice = (): string => {
-    console.log(event.price, event.name);
     if (event.price === 0) {
       return "Gratuit";
     }

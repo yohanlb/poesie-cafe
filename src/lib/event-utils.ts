@@ -24,8 +24,9 @@ export const formatDate = (date: Date): string => {
 };
 
 export const formatTime = (date: Date): string => {
-  const hours = date.getHours().toString().padStart(2, "0");
-  const minutes = date.getMinutes().toString().padStart(2, "0");
+  // Use UTC methods to avoid timezone conversion issues
+  const hours = date.getUTCHours().toString().padStart(2, "0");
+  const minutes = date.getUTCMinutes().toString().padStart(2, "0");
   return `${hours}H${minutes}`;
 };
 
@@ -39,6 +40,7 @@ export const formatDuration = (duration: number): string => {
 };
 
 export const getEndTime = (startDate: Date, duration: number): string => {
+  // Create end date using UTC time to avoid timezone issues
   const endDate = new Date(startDate.getTime() + duration * 60 * 60 * 1000);
   return formatTime(endDate);
 };
