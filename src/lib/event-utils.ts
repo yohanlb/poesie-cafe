@@ -46,7 +46,7 @@ export const getEndTime = (startDate: Date, duration: number): string => {
 };
 
 export const groupEventsByDate = (events: Event[]): Record<string, Event[]> => {
-  return events.reduce((acc, event) => {
+  const grouped = events.reduce((acc, event) => {
     const dateKey = event.date.toISOString().split("T")[0];
     if (!acc[dateKey]) {
       acc[dateKey] = [];
@@ -54,6 +54,13 @@ export const groupEventsByDate = (events: Event[]): Record<string, Event[]> => {
     acc[dateKey].push(event);
     return acc;
   }, {} as Record<string, Event[]>);
+
+  // Sort events by time within each date group
+  Object.keys(grouped).forEach((dateKey) => {
+    grouped[dateKey].sort((a, b) => a.date.getTime() - b.date.getTime());
+  });
+
+  return grouped;
 };
 
 export const sortDatesChronologically = (dates: string[]): string[] => {
