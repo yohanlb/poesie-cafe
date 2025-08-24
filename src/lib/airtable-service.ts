@@ -20,14 +20,15 @@ export const getEventsFromAirtable = async (): Promise<Event[]> => {
         name: (record.get("Event Name") as string) || "",
         date: new Date(record.get("Date") as string),
         duration: (record.get("Duration") as number) || 1,
-        price: record.get("Price") as string,
+        price: record.get("Price") as number,
         instructor: record.get("Host") as string,
         instagram: record.get("Instagram") as string,
         description: record.get("Description") as string,
         eventType: (record.get("Event Type") as Event["eventType"]) || "other",
         emoji: record.get("Emoji") as string,
         reservationLink: record.get("Reservation Link") as string,
-        fullyBooked: (record.get("Fully Booked") as boolean) || false,
+        availability:
+          (record.get("Availability") as Event["availability"]) || "Disponible",
         isReady: (record.get("IsReady") as boolean) || false,
       })
     );

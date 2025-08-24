@@ -3,7 +3,7 @@ export interface Event {
   name: string;
   date: Date;
   duration: number; // Duration in hours
-  price?: string;
+  price?: number;
   instructor?: string;
   instagram?: string;
   description?: string;
@@ -16,6 +16,6 @@ export interface Event {
     | "brunch";
   emoji?: string;
   reservationLink?: string;
-  fullyBooked: boolean;
+  availability: "Disponible" | "Complet";
   isReady: boolean;
 }
