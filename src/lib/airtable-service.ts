@@ -29,10 +29,10 @@ export const getEventsFromAirtable = async (): Promise<Event[]> => {
         reservationLink: record.get("Reservation Link") as string,
         availability:
           (record.get("Availability") as Event["availability"]) || "Disponible",
-        isReady: (record.get("IsReady") as boolean) || false,
+        isVisible: (record.get("Is Visible") as boolean) || false,
       })
     );
-    return events.filter((event) => !event.isReady);
+    return events.filter((event) => event.isVisible);
   } catch (error) {
     console.error("Error fetching from Airtable:", error);
     throw error;
