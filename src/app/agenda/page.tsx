@@ -8,11 +8,10 @@ import {
 } from "../../lib/event-utils";
 import { Card, CardContent } from "../../components/ui/card";
 import { Badge } from "../../components/ui/badge";
-import { events } from "../../data/events";
+import { getEventsFromAirtable } from "../../lib/airtable-service";
 
 export default async function Evenements() {
-  // TODO - Activate Airtable events when ready
-  // const events = await getEventsFromAirtable();
+  const events = await getEventsFromAirtable();
   const eventsByDate = groupEventsByDate(events);
   const sortedDates = sortDatesChronologically(Object.keys(eventsByDate));
 
