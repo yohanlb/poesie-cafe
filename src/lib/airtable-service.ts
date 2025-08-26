@@ -32,7 +32,15 @@ export const getEventsFromAirtable = async (): Promise<Event[]> => {
         isVisible: (record.get("Is Visible") as boolean) || false,
       })
     );
-    return events.filter((event) => event.isVisible);
+
+    return events.filter((event) => {
+      // Filter out events that don't have a valid date or name
+      const hasValidDate =
+        event.date instanceof Date && !isNaN(event.date.getTime());
+      const hasValidName = event.name && event.name.trim().length > 0;
+
+      return event.isVisible && hasValidDate && hasValidName;
+    });
   } catch (error) {
     console.error("Error fetching from Airtable:", error);
     throw error;
