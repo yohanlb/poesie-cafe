@@ -57,7 +57,7 @@ export default function Home() {
       </div>
 
       {/* Address */}
-      <address className="not-italic">
+      <address className="not-italic my-12">
         <a
           href="https://maps.app.goo.gl/xykKssnuFmrHMATy7"
           target="_blank"
