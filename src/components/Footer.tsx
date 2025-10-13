@@ -9,6 +9,7 @@ export default function Footer() {
           href="https://yohanlebreton.com"
           target="_blank"
           rel="dofollow"
+          data-umami-event="Click on Yohan Le Breton"
           className="hover:text-white/60 md:hover:text-white/80 transition-colors"
         >
           Yohan Le Breton
@@ -18,6 +19,7 @@ export default function Footer() {
         href="https://www.instagram.com/poesiecoffee/"
         target="_blank"
         rel="noopener noreferrer"
+        data-umami-event="Click on Instagram"
       >
         <Image
           src="/images/instagram-icon.svg"

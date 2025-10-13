@@ -62,6 +62,7 @@ export default function Home() {
           href="https://maps.app.goo.gl/xykKssnuFmrHMATy7"
           target="_blank"
           rel="noopener noreferrer"
+          data-umami-event="Click on Address"
           className="text-md md:text-xl lg:text-2xl text-center leading-5 md:leading-8 font-normal md:mb-2 hover:underline"
         >
           <p>10 PASSAGE THIÉRÉ,</p>
