@@ -3,10 +3,11 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="h-screen bg-[#24388E] text-white flex flex-col max-w-screen-2xl mx-auto">
+    <main className="h-screen bg-[var(--background-blue)] text-white flex flex-col max-w-screen-2xl mx-auto">
       <div className="flex-1 flex flex-col p-[clamp(1rem,3vw,4rem)]">
         {/* Header: Title and Address */}
         <header className="flex justify-between items-start mb-[clamp(2rem,5vh,6rem)]">
+          {/* -mt-2 for optical alignment with large font size */}
           <h1 className="text-[clamp(4rem,10vw,6.5rem)] leading-[1.3] font-instrument-serif -mt-2">
             Poésie
           </h1>
@@ -18,7 +19,7 @@ export default function Home() {
 
         {/* Main Content Area */}
         <div className="flex-1 flex flex-col justify-center">
-          <p className="text-[clamp(2.5rem,7vw,9rem)] leading-[0.9] font-instrument-serif w-full max-[400px]:w-full min-[400px]:max-w-[75%]">
+          <p className="text-[clamp(2.5rem,7vw,9rem)] leading-[0.9] font-instrument-serif w-full min-[400px]:max-w-[75%]">
             Poésie est un coffee shop, et un lieu de rencontres artistiques.{" "}
             <Link
               href="/agenda"
