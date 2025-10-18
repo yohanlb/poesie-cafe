@@ -23,7 +23,7 @@ export default async function Evenements() {
         <div className="flex-grow flex flex-col items-center justify-center py-4">
           {/* Page Title */}
           <div className="text-center mb-8">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground/95 tracking-wide">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground/95 tracking-wide text-white">
               Agenda
             </h1>
           </div>
