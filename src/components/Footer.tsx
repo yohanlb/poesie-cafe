@@ -1,9 +1,7 @@
-import Image from "next/image";
-
 export default function Footer() {
   return (
-    <footer className="h-11 flex justify-between items-center px-4">
-      <p className="text-[10px] md:text-xs text-white/40 md:text-white/60 text-center flex-1">
+    <footer className="h-11 flex justify-center items-center px-4">
+      <p className="text-[10px] md:text-xs text-white/40 md:text-white/60 text-center">
         Design by Axelle Brisard / Developed by{" "}
         <a
           href="https://yohanlebreton.com"
@@ -15,20 +13,6 @@ export default function Footer() {
           Yohan Le Breton
         </a>
       </p>
-      <a
-        href="https://www.instagram.com/poesiecoffee/"
-        target="_blank"
-        rel="noopener noreferrer"
-        data-umami-event="Click on Instagram"
-      >
-        <Image
-          src="/images/instagram-icon.svg"
-          alt="Instagram"
-          width={24}
-          height={24}
-          className="hover:opacity-80 transition-opacity"
-        />
-      </a>
     </footer>
   );
 }
