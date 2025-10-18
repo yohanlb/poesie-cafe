@@ -6,9 +6,9 @@ export default function Home() {
     <main className="h-screen bg-[var(--background-blue)] text-white flex flex-col max-w-screen-2xl mx-auto">
       <div className="flex-1 flex flex-col p-[clamp(1rem,3vw,4rem)]">
         {/* Header: Title and Address */}
-        <header className="flex justify-between items-start mb-[clamp(2rem,5vh,6rem)]">
+        <header className="flex justify-between items-start mb-[clamp(2rem,5vh,6rem)] mt-2">
           {/* -mt-2 for optical alignment with large font size */}
-          <h1 className="text-[clamp(4rem,10vw,6.5rem)] leading-[1.3] font-instrument-serif -mt-2">
+          <h1 className="text-[clamp(4rem,10vw,6.5rem)] leading-[1.3] font-instrument-serif -mt-4">
             Poésie
           </h1>
           <div className="text-[clamp(1.2rem,3vw,3.5rem)] leading-[1.3] font-instrument-serif text-right">
@@ -23,7 +23,8 @@ export default function Home() {
             Poésie est un coffee shop, et un lieu de rencontres artistiques.{" "}
             <Link
               href="/agenda"
-              className="text-[clamp(1.3rem,2.5vw,3.2rem)] leading-[1.3] font-instrument-serif underline hover:no-underline"
+              className="text-[clamp(1.3rem,2.5vw,3.2rem)] leading-[1.3] font-instrument-serif decoration-1
+ underline underline-offset-4 hover:decoration-2"
             >
               agenda
             </Link>
