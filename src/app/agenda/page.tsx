@@ -1,14 +1,14 @@
-import Footer from "../../components/Footer";
-import EventCard from "../../components/EventCard";
-import Navbar from "../../components/Navbar";
+import Footer from "@components/Footer";
+import EventCard from "@components/EventCard";
+import Navbar from "@components/Navbar";
 import {
   formatDate,
   groupEventsByDate,
   sortDatesChronologically,
-} from "../../lib/event-utils";
-import { Card, CardContent } from "../../components/ui/card";
-import { Badge } from "../../components/ui/badge";
-import { getEventsFromAirtable } from "../../lib/airtable-service";
+} from "@lib/event-utils";
+import { Card, CardContent } from "@components/ui/card";
+import { Badge } from "@components/ui/badge";
+import { getEventsFromAirtable } from "@lib/airtable-service";
 
 export default async function Evenements() {
   const events = await getEventsFromAirtable();
