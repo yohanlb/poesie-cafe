@@ -88,11 +88,6 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-/* Instrument Serif font utility class */
-.font-instrument-serif {
-  font-family: var(--font-instrument-serif), serif;
-}
-
 body {
   background-color: var(--background-blue);
   -webkit-font-smoothing: antialiased;

@@ -6,7 +6,7 @@ export default function BackLink() {
     <div className="pt-8 pb-4">
       <Link
         href="/"
-        className="inline-flex items-center gap-2 text-white/80 font-instrument-serif text-lg font-medium hover:text-white/100 transition-colors"
+        className="inline-flex items-center gap-2 text-white/80 text-lg font-medium hover:text-white/100 transition-colors"
         data-umami-event="Click on Back to Home"
       >
         <ArrowLeft size={16} />

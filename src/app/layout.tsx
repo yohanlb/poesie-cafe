@@ -1,20 +1,13 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, Instrument_Serif } from "next/font/google";
+import { Instrument_Serif } from "next/font/google";
 import Script from "next/script";
 import { SEO_KEYWORDS } from "./constants/seo-keywords";
 import "./globals.css";
-
-const ibmPlexSans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  display: "swap",
-});
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: "400",
   display: "swap",
-  variable: "--font-instrument-serif",
 });
 
 const SITE_TITLE = "Poésie Coffee";
@@ -93,7 +86,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className={`${ibmPlexSans.className} ${instrumentSerif.variable}`}>
+      <body className={instrumentSerif.className}>
         {children}
         <Script
           src="/analytics.js"

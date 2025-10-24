@@ -50,11 +50,11 @@ export default function EventCard({ event }: { event: Event }) {
       <CardHeader>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="text-2xl">{event.emoji || "📅"}</span>
-            <CardTitle className="text-gray-900 text-2xl font-normal">
+            <span className="text-3xl">{event.emoji || "📅"}</span>
+            <CardTitle className="text-gray-900 text-3xl font-normal">
               {event.name}
               {isEventFullyBooked() && (
-                <span className="text-red-600 font-medium text-lg ml-2">
+                <span className="text-red-600 font-medium text-xl ml-2">
                   (complet)
                 </span>
               )}
@@ -62,7 +62,7 @@ export default function EventCard({ event }: { event: Event }) {
           </div>
         </div>
         <CardDescription className="text-gray-600">
-          <div className="flex flex-wrap gap-2 text-sm">
+          <div className="flex flex-wrap gap-2 text-base">
             <div className="flex items-center gap-1 text-gray-700">
               <Clock className="w-4 h-4" />
               <span>
@@ -85,9 +85,9 @@ export default function EventCard({ event }: { event: Event }) {
 
       {(event.description || event.reservationLink) && (
         <CardContent>
-          <div className="text-gray-700 text-sm leading-relaxed text-left">
+          <div className="text-gray-700 text-base leading-relaxed text-left">
             {event.description && (
-              <div className="prose prose-sm prose-neutral max-w-none">
+              <div className="prose prose-base prose-neutral max-w-none">
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>
                   {event.description ?? ""}
                 </ReactMarkdown>
@@ -97,7 +97,6 @@ export default function EventCard({ event }: { event: Event }) {
               <>
                 {event.description && (
                   <>
-                    <br />
                     <br />
                   </>
                 )}
@@ -138,7 +137,7 @@ export default function EventCard({ event }: { event: Event }) {
               >
                 <Users className="w-4 h-4 text-gray-600" />
               </Badge>
-              <span className="text-base font-normal text-gray-900">
+              <span className="text-lg font-normal text-gray-900">
                 {event.instructor}
               </span>
             </div>
@@ -160,7 +159,7 @@ export default function EventCard({ event }: { event: Event }) {
                     className="w-4 h-4 flex-shrink-0"
                     aria-hidden="true"
                   />
-                  <span className="text-base font-normal leading-none">
+                  <span className="text-lg font-normal leading-none">
                     {event.instagram}
                   </span>
                 </Badge>
