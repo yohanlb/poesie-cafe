@@ -4,7 +4,7 @@ import "./homepage.css";
 
 export default function Home() {
   return (
-    <main className="h-screen bg-background text-white flex flex-col max-w-screen-2xl mx-auto">
+    <main className="h-dvh bg-background text-white flex flex-col max-w-screen-2xl mx-auto">
       <div className="flex-1 flex flex-col spacing-section">
         {/* Header: Title and Address */}
         <header className="flex justify-between items-start spacing-hero mt-2">
@@ -19,7 +19,7 @@ export default function Home() {
 
         {/* Main Content Area */}
         <div className="flex-1 flex flex-col justify-center">
-          <p className="text-hero font-instrument-serif w-full min-[400px]:max-w-[80%] animate-fade-in-1">
+          <p className="text-hero font-instrument-serif w-full sm:max-w-[80%] animate-fade-in-1">
             Poésie est un coffee shop, et un lieu de rencontres artistiques.{" "}
             <Link
               href="/agenda"
