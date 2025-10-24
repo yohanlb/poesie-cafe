@@ -116,6 +116,7 @@ export default function EventCard({ event }: { event: Event }) {
                         ? "line-through text-gray-500"
                         : "text-blue-600 hover:text-blue-800"
                     } underline`}
+                    data-umami-event="Click on Event Reservation"
                   >
                     {getReservationText(event.reservationLink).linkText}
                   </a>
@@ -149,6 +150,7 @@ export default function EventCard({ event }: { event: Event }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Suivre ${event.instructor} sur Instagram`}
+                data-umami-event="Click on Instructor Instagram"
               >
                 <Badge
                   variant="secondary"
