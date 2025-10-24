@@ -31,19 +31,22 @@ export default function About() {
           </div>
 
           {/* Content */}
-          <div className="w-full max-w-2xl space-y-12">
+          <div className="w-full max-w-2xl space-y-16">
             {/* Address */}
-            <div className="text-center">
+            <div className="text-center space-y-3">
+              <h2 className="text-2xl md:text-3xl font-instrument-serif text-white">
+                Poésie Coffee
+              </h2>
               <p className="text-xl md:text-2xl font-instrument-serif text-white/80">
-                10 Passage Thiéré
-              </p>
-              <p className="text-xl md:text-2xl font-instrument-serif text-white/80">
-                75011, Paris
+                10 Passage Thiéré, 75011, Paris
               </p>
             </div>
 
-            {/* Instagram Link */}
-            <div className="text-center">
+            {/* Social Links */}
+            <div className="text-center space-y-4">
+              <h2 className="text-2xl md:text-3xl font-instrument-serif text-white">
+                Nous suivre
+              </h2>
               <a
                 href="https://instagram.com/poesiecoffee"
                 target="_blank"
@@ -57,12 +60,12 @@ export default function About() {
             </div>
 
             {/* Credits Section */}
-            <div className="text-center space-y-6">
+            <div className="text-center space-y-4">
               <h2 className="text-2xl md:text-3xl font-instrument-serif text-white">
                 Crédits
               </h2>
 
-              <div className="space-y-4">
+              <div className="space-y-2">
                 <p className="text-lg md:text-xl font-instrument-serif text-white/80">
                   Design par <span className="text-white">Axelle Brisard</span>
                 </p>
