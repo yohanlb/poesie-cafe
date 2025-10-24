@@ -19,7 +19,7 @@ export default function Home() {
 
         {/* Main Content Area */}
         <div className="flex-1 flex flex-col justify-center">
-          <p className="text-[clamp(2.5rem,7vw,9rem)] leading-[0.9] font-instrument-serif w-full min-[400px]:max-w-[75%] animate-fade-in-1">
+          <p className="text-[clamp(3.5rem,8vw,9rem)] leading-[0.9] font-instrument-serif w-full min-[400px]:max-w-[80%] animate-fade-in-1">
             Poésie est un coffee shop, et un lieu de rencontres artistiques.{" "}
             <Link
               href="/agenda"
