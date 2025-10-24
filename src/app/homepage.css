@@ -9,8 +9,8 @@
   --text-link: clamp(1.3rem, 2.5vw, 3.2rem);
 
   /* Spacing scale for homepage */
-  --spacing-hero: clamp(2rem, 5vh, 6rem);
-  --spacing-section: clamp(1rem, 3vw, 4rem);
+  --spacing-hero: clamp(1rem, 2.5vh, 4rem);
+  --spacing-section: clamp(0.3rem, 1.5vw, 3rem);
 }
 
 /* Typography utility classes for homepage */
@@ -37,6 +37,23 @@
 .text-link {
   font-size: var(--text-link);
   line-height: 1.3;
+}
+
+/* Line break control for hero text */
+.line-break-1 {
+  display: block;
+}
+
+.line-break-2 {
+  display: block;
+}
+
+.line-break-3 {
+  display: block;
+}
+
+.no-break {
+  white-space: nowrap;
 }
 
 /* Spacing utility classes for homepage */
@@ -87,5 +104,43 @@
   .animate-fade-in-4,
   .animate-fade-in-5 {
     animation: none;
+  }
+}
+
+/* Optimize for wide screens with limited height */
+@media (min-width: 1200px) and (max-height: 800px) {
+  :root {
+    --text-hero: clamp(2.5rem, 6vw, 6.5rem);
+    --text-title: clamp(2.8rem, 6vw, 4.5rem);
+    --text-subtitle: clamp(1.2rem, 3vw, 3.5rem);
+    --spacing-hero: clamp(0.8rem, 1.5vh, 2.5rem);
+    --spacing-section: clamp(0.2rem, 1vw, 2rem);
+  }
+
+  .text-hero {
+    line-height: 1.05;
+  }
+
+  .text-title {
+    line-height: 1.1;
+  }
+
+  .text-subtitle {
+    line-height: 1.1;
+  }
+}
+
+/* Further optimization for very wide screens with very limited height */
+@media (min-width: 1400px) and (max-height: 700px) {
+  :root {
+    --text-hero: clamp(2rem, 5vw, 5rem);
+    --text-title: clamp(2.4rem, 5vw, 3.8rem);
+    --text-subtitle: clamp(1rem, 2.5vw, 3rem);
+    --spacing-hero: clamp(0.5rem, 1vh, 1.5rem);
+    --spacing-section: clamp(0.1rem, 0.8vw, 1.2rem);
+  }
+
+  .text-hero {
+    line-height: 1;
   }
 }
