@@ -51,10 +51,10 @@ export default function EventCard({ event }: { event: Event }) {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="text-2xl">{event.emoji || "📅"}</span>
-            <CardTitle className="text-gray-900 text-2xl font-instrument-serif">
+            <CardTitle className="text-gray-900 text-2xl font-normal">
               {event.name}
               {isEventFullyBooked() && (
-                <span className="text-red-600 font-normal text-lg ml-2">
+                <span className="text-red-600 font-medium text-lg ml-2">
                   (complet)
                 </span>
               )}
