@@ -1,0 +1,91 @@
+/* Homepage-specific styles */
+
+/* Typography scale for homepage */
+:root {
+  --text-hero: clamp(3.5rem, 8vw, 9rem);
+  --text-title: clamp(4rem, 10vw, 6.5rem);
+  --text-subtitle: clamp(1.8rem, 5vw, 5.5rem);
+  --text-address: clamp(1.2rem, 3vw, 3.5rem);
+  --text-link: clamp(1.3rem, 2.5vw, 3.2rem);
+
+  /* Spacing scale for homepage */
+  --spacing-hero: clamp(2rem, 5vh, 6rem);
+  --spacing-section: clamp(1rem, 3vw, 4rem);
+}
+
+/* Typography utility classes for homepage */
+.text-hero {
+  font-size: var(--text-hero);
+  line-height: 0.9;
+}
+
+.text-title {
+  font-size: var(--text-title);
+  line-height: 1.3;
+}
+
+.text-subtitle {
+  font-size: var(--text-subtitle);
+  line-height: 1.3;
+}
+
+.text-address {
+  font-size: var(--text-address);
+  line-height: 1.3;
+}
+
+.text-link {
+  font-size: var(--text-link);
+  line-height: 1.3;
+}
+
+/* Spacing utility classes for homepage */
+.spacing-hero {
+  margin-bottom: var(--spacing-hero);
+}
+
+.spacing-section {
+  padding: var(--spacing-section);
+}
+
+/* Homepage-specific animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animation utility classes with longer fade-ins and dramatic pause */
+.animate-fade-in-1 {
+  animation: fade-in 2.5s ease-out 0ms both;
+}
+
+.animate-fade-in-2 {
+  animation: fade-in 2.5s ease-out 1000ms both;
+}
+
+.animate-fade-in-3 {
+  animation: fade-in 2.5s ease-out 1200ms both;
+}
+
+.animate-fade-in-4 {
+  animation: fade-in 2.5s ease-out 1400ms both;
+}
+
+.animate-fade-in-5 {
+  animation: fade-in 2.5s ease-out 1600ms both;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-1,
+  .animate-fade-in-2,
+  .animate-fade-in-3,
+  .animate-fade-in-4,
+  .animate-fade-in-5 {
+    animation: none;
+  }
+}

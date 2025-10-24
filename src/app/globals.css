@@ -93,48 +93,6 @@
   font-family: var(--font-instrument-serif), serif;
 }
 
-/* Fade-in animation keyframes */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Animation utility classes with longer fade-ins and dramatic pause */
-.animate-fade-in-1 {
-  animation: fade-in 2.5s ease-out 0ms both;
-}
-
-.animate-fade-in-2 {
-  animation: fade-in 2.5s ease-out 1000ms both;
-}
-
-.animate-fade-in-3 {
-  animation: fade-in 2.5s ease-out 1200ms both;
-}
-
-.animate-fade-in-4 {
-  animation: fade-in 2.5s ease-out 1400ms both;
-}
-
-.animate-fade-in-5 {
-  animation: fade-in 2.5s ease-out 1600ms both;
-}
-
-/* Respect user's motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .animate-fade-in-1,
-  .animate-fade-in-2,
-  .animate-fade-in-3,
-  .animate-fade-in-4,
-  .animate-fade-in-5 {
-    animation: none;
-  }
-}
-
 body {
   background-color: var(--background-blue);
   -webkit-font-smoothing: antialiased;
