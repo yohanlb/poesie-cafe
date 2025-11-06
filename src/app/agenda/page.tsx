@@ -9,6 +9,7 @@ import {
 import { Card, CardContent } from "@components/ui/card";
 import { Badge } from "@components/ui/badge";
 import { getEventsFromAirtable } from "@lib/airtable-service";
+import { montserrat } from "@lib/fonts";
 
 export default async function Evenements() {
   const events = await getEventsFromAirtable();
@@ -29,7 +30,7 @@ export default async function Evenements() {
           </div>
 
           {/* Events Timeline */}
-          <div className="w-full space-y-12">
+          <div className={`w-full space-y-12 ${montserrat.className}`}>
             <section>
               {sortedDates.length > 0 ? (
                 <div className="space-y-8">

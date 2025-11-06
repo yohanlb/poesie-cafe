@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
-import { Instrument_Serif } from "next/font/google";
 import Script from "next/script";
 import { SEO_KEYWORDS } from "./constants/seo-keywords";
 import "./globals.css";
-
-const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-});
+import { instrumentSerif } from "@lib/fonts";
 
 const SITE_TITLE = "Poésie Coffee";
 const SITE_DESCRIPTION = "Café & Ateliers à Paris";
