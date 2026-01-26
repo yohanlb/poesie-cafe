@@ -16,7 +16,7 @@ export default function Footer() {
       <span className="text-white/20" aria-hidden="true">
         •
       </span>
-      <Link
+      {/* <Link
         href="/faq"
         className={FOOTER_LINK_CLASS}
         data-umami-event="Click on FAQ"
@@ -25,7 +25,7 @@ export default function Footer() {
       </Link>
       <span className="text-white/20" aria-hidden="true">
         •
-      </span>
+      </span> */}
       <Link
         href="/about"
         className={FOOTER_LINK_CLASS}
