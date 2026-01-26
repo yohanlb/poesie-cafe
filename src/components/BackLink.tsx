@@ -9,7 +9,14 @@ export default function BackLink() {
   return (
     <div className="pt-8 pb-4">
       <button
-        onClick={() => router.back()}
+        type="button"
+        onClick={() => {
+          if (window.history.length > 1) {
+            router.back();
+          } else {
+            router.push("/");
+          }
+        }}
         className="inline-flex items-center gap-2 text-white/80 text-lg font-medium hover:text-white/100 transition-colors"
         data-umami-event="Click on Back"
       >
