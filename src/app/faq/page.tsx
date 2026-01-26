@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function FAQ() {
   return (
-    <main className="min-h-screen bg-[var(--background-blue)] text-white flex flex-col">
+    <main className="min-h-svh justify-between flex flex-col bg-[var(--background-blue)] text-white">
       <div className="w-full max-w-3xl mx-auto px-4 sm:px-8">
         <BackLink />
 
