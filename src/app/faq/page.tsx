@@ -10,7 +10,7 @@ import {
 import { montserrat } from "@lib/fonts";
 
 export const metadata: Metadata = {
-  title: "FAQ",
+  title: "Poésie - FAQ",
   description:
     "Questions fréquentes sur les ateliers à Poésie Coffee - Horaires, tarifs, réservations et informations pratiques",
   keywords: [
@@ -33,10 +33,13 @@ export default function FAQ() {
           className={`flex-grow flex flex-col items-center justify-center py-8 ${montserrat.className}`}
         >
           {/* Page Title */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white tracking-wide">
               FAQ
             </h1>
+            <h2 className="text-xl md:text-3xl text-white/80">
+              Animer un atelier chez Poésie
+            </h2>
           </div>
 
           {/* FAQ Accordion */}
@@ -51,7 +54,8 @@ export default function FAQ() {
                   <ul className="space-y-3 list-disc list-inside">
                     <li>
                       <strong>En semaine :</strong> du mercredi au vendredi,
-                      après la fermeture du café, à partir de 18h30
+                      après la fermeture du café, à partir de 18:30 jusqu&apos;à
+                      21h
                     </li>
                     <li>
                       <strong>Le week-end :</strong> sur les horaires
@@ -113,7 +117,7 @@ export default function FAQ() {
                         </li>
                         <li>
                           Minimum de 3 participant·es pour un atelier entre 35 €
-                          et 55 €
+                          et 70 €
                         </li>
                       </ul>
                     </div>
