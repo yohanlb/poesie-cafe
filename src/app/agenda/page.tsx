@@ -10,6 +10,7 @@ import { Card, CardContent } from "@components/ui/card";
 import { Badge } from "@components/ui/badge";
 import { getEventsFromAirtable } from "@lib/airtable-service";
 import { montserrat } from "@lib/fonts";
+import Link from "next/link";
 
 export default async function Evenements() {
   const events = await getEventsFromAirtable();
@@ -19,7 +20,7 @@ export default async function Evenements() {
   return (
     <main className="min-h-svh justify-between flex flex-col bg-background">
       <div className="w-full max-w-3xl mx-auto px-4 sm:px-8">
-        <BackLink />
+        <BackLink href="/" />
 
         <div className="flex-grow flex flex-col items-center justify-center py-4">
           {/* Page Title */}
@@ -28,6 +29,19 @@ export default async function Evenements() {
               Agenda
             </h1>
           </div>
+
+          {/* FAQ Link */}
+          <h3
+            className={`text-center mb-8 ${montserrat.className} text-base md:text-lg text-foreground/70`}
+          >
+            Vous souhaitez animer un atelier ? Consultez notre{" "}
+            <Link
+              href="/faq"
+              className="hover:text-foreground/90 transition-colors underline underline-offset-4"
+            >
+              FAQ
+            </Link>
+          </h3>
 
           {/* Events Timeline */}
           <div className={`w-full space-y-12 ${montserrat.className}`}>
