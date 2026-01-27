@@ -19,7 +19,7 @@ export default async function Evenements() {
   return (
     <main className="min-h-svh justify-between flex flex-col bg-background">
       <div className="w-full max-w-3xl mx-auto px-4 sm:px-8">
-        <BackLink />
+        <BackLink href="/" />
 
         <div className="flex-grow flex flex-col items-center justify-center py-4">
           {/* Page Title */}

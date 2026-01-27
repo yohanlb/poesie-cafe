@@ -20,7 +20,7 @@ export default function About() {
   return (
     <main className="min-h-screen bg-[var(--background-blue)] text-white flex flex-col">
       <div className="w-full max-w-3xl mx-auto px-4 sm:px-8">
-        <BackLink />
+        <BackLink href="/" />
 
         <div className="flex-grow flex flex-col items-center justify-center py-8">
           {/* Page Title */}

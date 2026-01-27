@@ -27,7 +27,7 @@ export default function FAQ() {
   return (
     <main className="min-h-svh justify-between flex flex-col bg-[var(--background-blue)] text-white">
       <div className="w-full max-w-3xl mx-auto px-4 sm:px-8">
-        <BackLink />
+        <BackLink href="/agenda" />
 
         <div
           className={`flex-grow flex flex-col items-center justify-center py-8 ${montserrat.className}`}

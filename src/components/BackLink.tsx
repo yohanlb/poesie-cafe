@@ -3,7 +3,11 @@
 import { useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 
-export default function BackLink() {
+interface BackLinkProps {
+  href: string;
+}
+
+export default function BackLink({ href }: BackLinkProps) {
   const router = useRouter();
 
   return (
@@ -11,11 +15,7 @@ export default function BackLink() {
       <button
         type="button"
         onClick={() => {
-          if (window.history.length > 1) {
-            router.back();
-          } else {
-            router.push("/");
-          }
+          router.push(href);
         }}
         className="inline-flex items-center gap-2 text-white/80 text-lg font-medium hover:text-white/100 transition-colors"
         data-umami-event="Click on Back"
