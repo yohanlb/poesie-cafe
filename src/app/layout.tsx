@@ -73,11 +73,13 @@ export const metadata: Metadata = {
   },
 };
 
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: RootLayoutProps): React.JSX.Element {
   return (
     <html lang="fr">
       <body className={instrumentSerif.className}>

@@ -12,7 +12,7 @@ import { getEventsFromAirtable } from "@lib/airtable-service";
 import { montserrat } from "@lib/fonts";
 import Link from "next/link";
 
-export default async function Evenements() {
+export default async function Agenda(): Promise<React.JSX.Element> {
   const events = await getEventsFromAirtable();
   const eventsByDate = groupEventsByDate(events);
   const sortedDates = sortDatesChronologically(Object.keys(eventsByDate));
@@ -23,14 +23,12 @@ export default async function Evenements() {
         <BackLink href="/" />
 
         <div className="flex-grow flex flex-col items-center justify-center py-4">
-          {/* Page Title */}
           <div className="text-center mb-8">
             <h1 className="text-3xl md:text-4xl lg:text-5xl text-foreground/95 tracking-wide">
               Agenda
             </h1>
           </div>
 
-          {/* FAQ Link */}
           <h3
             className={`text-center mb-8 ${montserrat.className} text-base md:text-lg text-foreground/70`}
           >
@@ -43,14 +41,12 @@ export default async function Evenements() {
             </Link>
           </h3>
 
-          {/* Events Timeline */}
           <div className={`w-full space-y-12 ${montserrat.className}`}>
             <section>
               {sortedDates.length > 0 ? (
                 <div className="space-y-8">
                   {sortedDates.map((dateKey) => (
                     <div key={dateKey} className="space-y-4">
-                      {/* Date Header */}
                       <div className="text-left mb-3">
                         <Badge
                           variant="secondary"
@@ -60,7 +56,6 @@ export default async function Evenements() {
                         </Badge>
                       </div>
 
-                      {/* Events for this date */}
                       <div className="space-y-6">
                         {eventsByDate[dateKey].map((event) => (
                           <EventCard key={event.id} event={event} />
