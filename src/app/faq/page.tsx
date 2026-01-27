@@ -29,7 +29,9 @@ export default function FAQ() {
       <div className="w-full max-w-3xl mx-auto px-4 sm:px-8">
         <BackLink />
 
-        <div className={`flex-grow flex flex-col items-center justify-center py-8 ${montserrat.className}`}>
+        <div
+          className={`flex-grow flex flex-col items-center justify-center py-8 ${montserrat.className}`}
+        >
           {/* Page Title */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white tracking-wide">
@@ -53,8 +55,8 @@ export default function FAQ() {
                     </li>
                     <li>
                       <strong>Le week-end :</strong> sur les horaires
-                      d&apos;ouverture du café : de 10h à 18h (en général 11h–13h
-                      ou 15h–17h pour un atelier de 2h)
+                      d&apos;ouverture du café : de 10h à 18h (en général
+                      11h–13h ou 15h–17h pour un atelier de 2h)
                     </li>
                   </ul>
                 </AccordionContent>
@@ -93,10 +95,7 @@ export default function FAQ() {
               </AccordionItem>
 
               {/* Nombre minimum de participant·es */}
-              <AccordionItem
-                value="nombre-minimum"
-                className="border-white/20"
-              >
+              <AccordionItem value="nombre-minimum" className="border-white/20">
                 <AccordionTrigger className="text-white hover:text-white/80 text-left text-lg md:text-xl [&>svg]:text-white/70">
                   Nombre minimum de participant·es
                 </AccordionTrigger>
@@ -109,12 +108,12 @@ export default function FAQ() {
                       </p>
                       <ul className="space-y-2 list-disc list-inside ml-4">
                         <li>
-                          Minimum de 4 participant·es pour un atelier entre 25
-                          € et 30 €
+                          Minimum de 4 participant·es pour un atelier entre 25 €
+                          et 30 €
                         </li>
                         <li>
-                          Minimum de 3 participant·es pour un atelier entre 35
-                          € et 55 €
+                          Minimum de 3 participant·es pour un atelier entre 35 €
+                          et 55 €
                         </li>
                       </ul>
                     </div>
@@ -125,8 +124,8 @@ export default function FAQ() {
                       </p>
                       <ul className="space-y-2 list-disc list-inside ml-4">
                         <li>
-                          Minimum de 2 participant·es, quel que soit le tarif
-                          de l&apos;atelier.
+                          Minimum de 2 participant·es, quel que soit le tarif de
+                          l&apos;atelier.
                         </li>
                       </ul>
                     </div>
@@ -135,10 +134,7 @@ export default function FAQ() {
               </AccordionItem>
 
               {/* Réservations & encaissements */}
-              <AccordionItem
-                value="reservations"
-                className="border-white/20"
-              >
+              <AccordionItem value="reservations" className="border-white/20">
                 <AccordionTrigger className="text-white hover:text-white/80 text-left text-lg md:text-xl [&>svg]:text-white/70">
                   Réservations & encaissements
                 </AccordionTrigger>
@@ -206,7 +202,7 @@ export default function FAQ() {
                       intéressées.
                     </li>
                     <li>
-                      Si il n&apos;y a pas de volonté de faire payer la
+                      S&apos;il n&apos;y a pas de volonté de faire payer la
                       totalité de l&apos;atelier en amont, il est aussi
                       recommandé de demander un acompte, ce qui permet
                       d&apos;éviter certaines annulations de dernière minute.
