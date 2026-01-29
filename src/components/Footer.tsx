@@ -1,11 +1,11 @@
 import Link from "next/link";
 
 const FOOTER_LINK_CLASS =
-  "text-xs md:text-sm text-white/40 md:text-white/60 hover:text-white/60 md:hover:text-white/80 transition-colors animate-fade-in-5";
+  "text-md text-white/60 hover:text-white transition-colors underline-offset-2 hover:underline";
 
 export default function Footer() {
   return (
-    <footer className="h-11 flex justify-center items-center px-4 gap-4">
+    <footer className="h-11 flex justify-center items-center px-4 gap-4 animate-fade-in-5">
       <Link
         href="/agenda"
         className={FOOTER_LINK_CLASS}

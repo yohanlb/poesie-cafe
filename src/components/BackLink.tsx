@@ -17,7 +17,7 @@ export default function BackLink({ href }: BackLinkProps) {
         onClick={() => {
           router.push(href);
         }}
-        className="inline-flex items-center gap-2 text-white/80 text-lg font-medium hover:text-white/100 transition-colors"
+        className="inline-flex items-center gap-2 text-lg text-white/80 hover:text-white transition-colors underline-offset-2 hover:underline cursor-pointer"
         data-umami-event="Click on Back"
       >
         <ArrowLeft size={16} />
