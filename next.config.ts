@@ -14,10 +14,6 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
-  // Ensure CSS is properly extracted
-  experimental: {
-    optimizeCss: true,
-  },
 };
 
 export default nextConfig;
