@@ -5,7 +5,7 @@ import "./globals.css";
 import { instrumentSerif } from "@lib/fonts";
 
 const SITE_TITLE = "Poésie Coffee";
-const SITE_DESCRIPTION = "Café & Ateliers à Paris";
+const SITE_DESCRIPTION = "Poésie est un Coffee Shop et un Lieu de Rencontres Artistiques au 10 Passage Thiéré, Paris 11ème. Découvrez nos expositions, ateliers créatifs et upcycling dans un cadre convivial.";
 const SHORT_DESCRIPTION =
   "Poésie est un Coffee Shop et un Lieu de Rencontres Artistiques, Expositions, Ateliers Créatifs & Upcycling";
 

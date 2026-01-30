@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const FOOTER_LINK_CLASS =
-  "text-md text-white/60 hover:text-white transition-colors underline-offset-2 hover:underline";
+  "text-md text-white/75 hover:text-white transition-colors underline-offset-2 hover:underline";
 
 export default function Footer() {
   return (
