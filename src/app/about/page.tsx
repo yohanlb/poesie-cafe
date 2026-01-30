@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import BackLink from "@components/BackLink";
+import Footer from "@components/Footer";
 import { Instagram } from "lucide-react";
 import { CONTACT_FORM_URL } from "../constants/contact";
 
@@ -98,6 +99,8 @@ export default function About() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </main>
   );
 }
