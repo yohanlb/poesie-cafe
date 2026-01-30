@@ -2,7 +2,7 @@
 
 Website for Poésie Café — a coffee shop and artistic meeting place in Paris.
 
-🌐 [Live Website](https://poesie-cafe.vercel.app)
+🌐 [Live Website](https://poesiecoffee.com/)
 
 ## Stack
 
