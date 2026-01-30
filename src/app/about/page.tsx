@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import BackLink from "@components/BackLink";
 import { Instagram } from "lucide-react";
+import { CONTACT_FORM_URL } from "../constants/contact";
 
 export const metadata: Metadata = {
   title: "À propos",
@@ -52,6 +53,22 @@ export default function About() {
               >
                 <Instagram size={28} />
                 @poesiecoffee
+              </a>
+            </div>
+
+            {/* Contact */}
+            <div className="text-center space-y-4">
+              <h2 className="text-2xl md:text-3xl text-white">
+                Nous contacter
+              </h2>
+              <a
+                href={CONTACT_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 text-xl md:text-2xl text-white/80 hover:text-white transition-colors underline underline-offset-2 decoration-1"
+                data-umami-event="Click on Contact Form"
+              >
+                Écrire un message / Proposer un atelier
               </a>
             </div>
 

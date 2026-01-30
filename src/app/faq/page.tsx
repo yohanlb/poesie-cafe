@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import BackLink from "@components/BackLink";
 import Footer from "@components/Footer";
-import { Accordion } from "@components/ui/accordion";
 import FAQAccordionItem from "@components/FAQAccordionItem";
+import { Accordion } from "@components/ui/accordion";
 import { montserrat } from "@lib/fonts";
+import { CONTACT_FORM_URL } from "../constants/contact";
 
 export const metadata: Metadata = {
   title: "Poésie - FAQ",
@@ -170,6 +171,18 @@ export default function FAQ(): React.JSX.Element {
                 </ul>
               </FAQAccordionItem>
             </Accordion>
+
+            <div className="text-center mt-12">
+              <a
+                href={CONTACT_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl md:text-2xl text-white/80 hover:text-white transition-colors underline underline-offset-2 decoration-1"
+                data-umami-event="Click on Contact Form FAQ"
+              >
+                Proposer un atelier
+              </a>
+            </div>
           </div>
         </div>
       </div>
