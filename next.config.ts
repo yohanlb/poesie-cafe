@@ -10,6 +10,14 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  // Optimize for faster initial page load
+  reactStrictMode: true,
+  poweredByHeader: false,
+  compress: true,
+  // Ensure CSS is properly extracted
+  experimental: {
+    optimizeCss: true,
+  },
 };
 
 export default nextConfig;

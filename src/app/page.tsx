@@ -4,7 +4,7 @@ import "./homepage.css";
 
 export default function Home() {
   return (
-    <main className="h-dvh bg-background text-white flex flex-col max-w-screen-2xl mx-auto">
+    <main className="min-h-screen bg-background text-white flex flex-col max-w-screen-2xl mx-auto">
       <div className="flex-1 flex flex-col spacing-section">
         {/* Header: Title and Address */}
         <header className="flex justify-between items-start spacing-hero mt-2">

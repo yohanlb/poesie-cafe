@@ -56,8 +56,13 @@
   --ring: oklch(0.556 0 0);
 }
 
+html {
+  background-color: #24388e;
+}
+
 body {
   background-color: var(--background-blue);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
