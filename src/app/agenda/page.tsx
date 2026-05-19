@@ -7,7 +7,6 @@ import {
   sortDatesChronologically,
 } from "@lib/event-utils";
 import { Card, CardContent } from "@components/ui/card";
-import { Badge } from "@components/ui/badge";
 import { getEventsFromAirtable } from "@lib/airtable-service";
 import { montserrat } from "@lib/fonts";
 import Link from "next/link";
@@ -47,13 +46,10 @@ export default async function Agenda(): Promise<React.JSX.Element> {
                 <div className="space-y-8">
                   {sortedDates.map((dateKey) => (
                     <div key={dateKey} className="space-y-4">
-                      <div className="text-left mb-3">
-                        <Badge
-                          variant="secondary"
-                          className="text-xl px-4 py-2 bg-white border-gray-200 text-gray-900 font-normal"
-                        >
+                      <div className="text-left mb-2">
+                        <span className="text-xl font-medium text-foreground">
                           {formatDate(new Date(dateKey))}
-                        </Badge>
+                        </span>
                       </div>
 
                       <div className="space-y-6">
