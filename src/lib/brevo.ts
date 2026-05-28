@@ -8,7 +8,12 @@ function getBrevoConfig(): { apiKey: string; listId: number } | null {
   const apiKey = process.env.BREVO_API_KEY;
   const listId = Number(process.env.BREVO_LIST_ID);
 
-  if (!apiKey || !listId || Number.isNaN(listId)) {
+  if (
+    !apiKey ||
+    process.env.BREVO_LIST_ID == null ||
+    Number.isNaN(listId) ||
+    listId < 1
+  ) {
     return null;
   }
 
@@ -38,6 +43,7 @@ export async function createNewsletterContact(
         listIds: [config.listId],
         updateEnabled: true,
       }),
+      signal: AbortSignal.timeout(10000),
     });
 
     if (response.status === 201 || response.status === 204) {

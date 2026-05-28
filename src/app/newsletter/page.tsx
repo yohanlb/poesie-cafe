@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 export default function NewsletterPage() {
   return (
     <main className="min-h-screen bg-[var(--background-blue)] text-white flex flex-col">
-      <div className="w-full max-w-3xl mx-auto px-4 sm:px-8">
+      <div className="flex flex-1 flex-col w-full max-w-3xl mx-auto px-4 sm:px-8">
         <BackLink href="/" />
 
-        <div className="flex-grow flex flex-col items-center justify-center py-8">
+        <div className="flex flex-1 flex-col items-center justify-center py-8">
           <div className="text-center mb-12 space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-white tracking-wide">
               Newsletter

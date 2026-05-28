@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { XIcon } from "lucide-react";
 import NewsletterForm from "@components/NewsletterForm";
@@ -10,10 +10,35 @@ const STORAGE_KEY = "poesie-newsletter-dismissed";
 const POPUP_DELAY_MS = 4000;
 const EXCLUDED_PATH = "/newsletter";
 
+function getStorageItem(key: string): string | null {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function setStorageItem(key: string, value: string): void {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // localStorage unavailable (private browsing, disabled storage, etc.)
+  }
+}
+
 export default function NewsletterPopup() {
   const pathname = usePathname();
   const [visible, setVisible] = useState(false);
+  const successTimerRef = useRef<number | null>(null);
   const isExcludedPage = pathname === EXCLUDED_PATH;
+
+  useEffect(() => {
+    return () => {
+      if (successTimerRef.current) {
+        clearTimeout(successTimerRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (isExcludedPage) {
@@ -21,7 +46,7 @@ export default function NewsletterPopup() {
       return;
     }
 
-    if (localStorage.getItem(STORAGE_KEY) === "true") {
+    if (getStorageItem(STORAGE_KEY) === "true") {
       return;
     }
 
@@ -33,13 +58,13 @@ export default function NewsletterPopup() {
   }, [isExcludedPage]);
 
   const dismiss = useCallback(() => {
-    localStorage.setItem(STORAGE_KEY, "true");
+    setStorageItem(STORAGE_KEY, "true");
     setVisible(false);
   }, []);
 
   const handleSuccess = useCallback(() => {
-    localStorage.setItem(STORAGE_KEY, "true");
-    window.setTimeout(() => setVisible(false), 2000);
+    setStorageItem(STORAGE_KEY, "true");
+    successTimerRef.current = window.setTimeout(() => setVisible(false), 2000);
   }, []);
 
   if (!visible || isExcludedPage) {
