@@ -5,7 +5,7 @@ const FOOTER_LINK_CLASS =
 
 export default function Footer() {
   return (
-    <footer className="h-11 flex justify-center items-center px-4 gap-4 animate-fade-in-5">
+    <footer className="mt-auto h-11 flex justify-center items-center px-4 gap-4 animate-fade-in-5">
       <Link
         href="/agenda"
         className={FOOTER_LINK_CLASS}
@@ -22,6 +22,16 @@ export default function Footer() {
         data-umami-event="Click on FAQ"
       >
         FAQ
+      </Link>
+      <span className="text-white/20" aria-hidden="true">
+        •
+      </span>
+      <Link
+        href="/newsletter"
+        className={FOOTER_LINK_CLASS}
+        data-umami-event="Click on Newsletter"
+      >
+        Newsletter
       </Link>
       <span className="text-white/20" aria-hidden="true">
         •
