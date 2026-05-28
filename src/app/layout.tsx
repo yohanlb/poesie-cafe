@@ -3,6 +3,7 @@ import Script from "next/script";
 import { SEO_KEYWORDS } from "./constants/seo-keywords";
 import "./globals.css";
 import { instrumentSerif } from "@lib/fonts";
+import NewsletterPopup from "@components/NewsletterPopup";
 
 const SITE_TITLE = "Poésie Coffee";
 const SITE_DESCRIPTION = "Poésie est un Coffee Shop et un Lieu de Rencontres Artistiques au 10 Passage Thiéré, Paris 11ème. Découvrez nos expositions, ateliers créatifs et upcycling dans un cadre convivial.";
@@ -90,6 +91,7 @@ export default function RootLayout({
           <html lang="fr">
             <body className={instrumentSerif.className}>
               {children}
+              <NewsletterPopup />
               <Script
                 src="/analytics.js"
                 data-website-id="cf950c5d-0a94-43e6-8cec-b78ea9d038fa"
