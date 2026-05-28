@@ -5,7 +5,7 @@ const FOOTER_LINK_CLASS =
 
 export default function Footer() {
   return (
-    <footer className="h-11 flex justify-center items-center px-4 gap-4 animate-fade-in-5">
+    <footer className="mt-auto h-11 flex justify-center items-center px-4 gap-4 animate-fade-in-5">
       <Link
         href="/agenda"
         className={FOOTER_LINK_CLASS}
