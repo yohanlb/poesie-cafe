@@ -15,7 +15,12 @@ if (process.env.NODE_ENV === "production" && isLiveSite && projectToken) {
     capture_pageview: "history_change",
     capture_pageleave: "if_capture_pageview",
     person_profiles: "identified_only",
-    disable_session_recording: true,
+    disable_session_recording: false,
+    session_recording: {
+      maskAllInputs: true,
+      recordBody: false,
+      recordHeaders: false,
+    },
     mask_all_text: true,
     mask_all_element_attributes: true,
   });

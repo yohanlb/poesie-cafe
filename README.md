@@ -26,8 +26,11 @@ npm run dev
 
 Umami and PostHog run alongside each other. PostHog is initialized in
 `src/instrumentation-client.ts` and captures pageviews (including client-side
-navigation), page exits, and automatic interaction events. Session recording is
-disabled, and interaction text and element attributes are masked.
+navigation), page exits, and automatic interaction events. Session replay is
+enabled on the live domains, with all form inputs masked and network request/
+response bodies and headers excluded. Interaction text and element attributes
+are masked in analytics events. Browser console logs follow the PostHog project's
+replay settings.
 
 Set these values in `.env.local` and in your hosting provider's environment:
 
